@@ -15,6 +15,8 @@
 		04EDFBB11E4A413800853720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBAF1E4A413800853720 /* Main.storyboard */; };
 		04EDFBB31E4A413800853720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBB21E4A413800853720 /* Assets.xcassets */; };
 		04EDFBB61E4A413800853720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBB41E4A413800853720 /* LaunchScreen.storyboard */; };
+		04EDFBBE1E4A43E700853720 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBBD1E4A43E700853720 /* LandingController.swift */; };
+		04EDFBC01E4A4AFD00853720 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		04EDFBB21E4A413800853720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EDFBB51E4A413800853720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04EDFBB71E4A413800853720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04EDFBBD1E4A43E700853720 /* LandingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
+		04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,27 @@
 		04EDFBA41E4A413800853720 /* Tiny Dev */ = {
 			isa = PBXGroup;
 			children = (
+				04EDFBC11E4A4B5A00853720 /* Fonts */,
 				04EDFBA51E4A413800853720 /* AppDelegate.swift */,
 				04EDFBA71E4A413800853720 /* GameScene.sks */,
 				04EDFBA91E4A413800853720 /* Actions.sks */,
 				04EDFBAB1E4A413800853720 /* GameScene.swift */,
 				04EDFBAD1E4A413800853720 /* GameViewController.swift */,
+				04EDFBBD1E4A43E700853720 /* LandingController.swift */,
 				04EDFBAF1E4A413800853720 /* Main.storyboard */,
 				04EDFBB21E4A413800853720 /* Assets.xcassets */,
 				04EDFBB41E4A413800853720 /* LaunchScreen.storyboard */,
 				04EDFBB71E4A413800853720 /* Info.plist */,
 			);
 			path = "Tiny Dev";
+			sourceTree = "<group>";
+		};
+		04EDFBC11E4A4B5A00853720 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EDFBC01E4A4AFD00853720 /* PressStart2P-Regular.ttf in Resources */,
 				04EDFBB11E4A413800853720 /* Main.storyboard in Resources */,
 				04EDFBA81E4A413800853720 /* GameScene.sks in Resources */,
 				04EDFBB31E4A413800853720 /* Assets.xcassets in Resources */,
@@ -150,6 +165,7 @@
 				04EDFBAC1E4A413800853720 /* GameScene.swift in Sources */,
 				04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */,
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
+				04EDFBBE1E4A43E700853720 /* LandingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

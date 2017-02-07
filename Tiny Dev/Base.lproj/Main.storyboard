@@ -38,19 +38,11 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch To Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y47-Fg-GKU">
-                                <rect key="frame" x="16" y="616" width="343" height="17"/>
+                                <rect key="frame" x="16" y="616" width="343" height="20"/>
                                 <fontDescription key="fontDescription" name="PressStart2P-Regular" family="Press Start 2P" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rqc-dp-Tz9">
-                                <rect key="frame" x="164" y="501" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Beep"/>
-                                <connections>
-                                    <action selector="Beep:" destination="rlK-g0-E3t" eventType="touchUpInside" id="EY9-ya-ruK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>

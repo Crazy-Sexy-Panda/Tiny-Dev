@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var audioPlayer : AVAudioPlayer? = nil
     var window: UIWindow?
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045604991E4A6DF40098A771 /* TitleMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 045604981E4A6DF40098A771 /* TitleMusic.mp3 */; };
+		0456049B1E4A736F0098A771 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456049A1E4A736F0098A771 /* gameMusic.mp3 */; };
 		04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBA51E4A413800853720 /* AppDelegate.swift */; };
 		04EDFBA81E4A413800853720 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBA71E4A413800853720 /* GameScene.sks */; };
 		04EDFBAA1E4A413800853720 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBA91E4A413800853720 /* Actions.sks */; };
@@ -15,11 +17,13 @@
 		04EDFBB11E4A413800853720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBAF1E4A413800853720 /* Main.storyboard */; };
 		04EDFBB31E4A413800853720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBB21E4A413800853720 /* Assets.xcassets */; };
 		04EDFBB61E4A413800853720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBB41E4A413800853720 /* LaunchScreen.storyboard */; };
-		04EDFBBE1E4A43E700853720 /* LandingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBBD1E4A43E700853720 /* LandingController.swift */; };
+		04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBBD1E4A43E700853720 /* LandingViewController.swift */; };
 		04EDFBC01E4A4AFD00853720 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		045604981E4A6DF40098A771 /* TitleMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TitleMusic.mp3; sourceTree = "<group>"; };
+		0456049A1E4A736F0098A771 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
 		04EDFBA21E4A413800853720 /* Tiny Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tiny Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDFBA51E4A413800853720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EDFBA71E4A413800853720 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -30,7 +34,7 @@
 		04EDFBB21E4A413800853720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04EDFBB51E4A413800853720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04EDFBB71E4A413800853720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04EDFBBD1E4A43E700853720 /* LandingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingController.swift; sourceTree = "<group>"; };
+		04EDFBBD1E4A43E700853720 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0456049C1E4A73740098A771 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				045604981E4A6DF40098A771 /* TitleMusic.mp3 */,
+				0456049A1E4A736F0098A771 /* gameMusic.mp3 */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
 		04EDFB991E4A413800853720 = {
 			isa = PBXGroup;
 			children = (
@@ -64,13 +77,14 @@
 		04EDFBA41E4A413800853720 /* Tiny Dev */ = {
 			isa = PBXGroup;
 			children = (
+				0456049C1E4A73740098A771 /* Music */,
 				04EDFBC11E4A4B5A00853720 /* Fonts */,
 				04EDFBA51E4A413800853720 /* AppDelegate.swift */,
 				04EDFBA71E4A413800853720 /* GameScene.sks */,
 				04EDFBA91E4A413800853720 /* Actions.sks */,
 				04EDFBAB1E4A413800853720 /* GameScene.swift */,
 				04EDFBAD1E4A413800853720 /* GameViewController.swift */,
-				04EDFBBD1E4A43E700853720 /* LandingController.swift */,
+				04EDFBBD1E4A43E700853720 /* LandingViewController.swift */,
 				04EDFBAF1E4A413800853720 /* Main.storyboard */,
 				04EDFBB21E4A413800853720 /* Assets.xcassets */,
 				04EDFBB41E4A413800853720 /* LaunchScreen.storyboard */,
@@ -148,9 +162,11 @@
 			files = (
 				04EDFBC01E4A4AFD00853720 /* PressStart2P-Regular.ttf in Resources */,
 				04EDFBB11E4A413800853720 /* Main.storyboard in Resources */,
+				045604991E4A6DF40098A771 /* TitleMusic.mp3 in Resources */,
 				04EDFBA81E4A413800853720 /* GameScene.sks in Resources */,
 				04EDFBB31E4A413800853720 /* Assets.xcassets in Resources */,
 				04EDFBB61E4A413800853720 /* LaunchScreen.storyboard in Resources */,
+				0456049B1E4A736F0098A771 /* gameMusic.mp3 in Resources */,
 				04EDFBAA1E4A413800853720 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,7 +181,7 @@
 				04EDFBAC1E4A413800853720 /* GameScene.swift in Sources */,
 				04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */,
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
-				04EDFBBE1E4A43E700853720 /* LandingController.swift in Sources */,
+				04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +343,7 @@
 				04EDFBBC1E4A413800853720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

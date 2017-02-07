@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,10 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Landing-->
+        <!--Landing View Controller-->
         <scene sceneID="0aP-wN-xR1">
             <objects>
-                <viewController id="rlK-g0-E3t" userLabel="Landing" customClass="LandingController" customModule="Tiny_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rlK-g0-E3t" customClass="LandingViewController" customModule="Tiny_Dev" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dhI-M1-qD4"/>
                         <viewControllerLayoutGuide type="bottom" id="gux-fr-AFm"/>
@@ -26,18 +27,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etU-x6-9HU">
-                                <rect key="frame" x="68" y="323" width="410" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiny Dev" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etU-x6-9HU">
+                                <rect key="frame" x="0.0" y="349" width="375" height="123"/>
                                 <fontDescription key="fontDescription" name="PressStart2P-Regular" family="Press Start 2P" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sprite" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-5p-0no">
+                                <rect key="frame" x="117" y="91" width="141" height="250"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch To Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y47-Fg-GKU">
+                                <rect key="frame" x="16" y="616" width="343" height="17"/>
+                                <fontDescription key="fontDescription" name="PressStart2P-Regular" family="Press Start 2P" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="gux-fr-AFm" firstAttribute="top" secondItem="etU-x6-9HU" secondAttribute="bottom" constant="195" id="2he-RC-EIV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y47-Fg-GKU" secondAttribute="trailing" id="CDu-0N-iC0"/>
+                            <constraint firstItem="etU-x6-9HU" firstAttribute="top" secondItem="dhI-M1-qD4" secondAttribute="bottom" constant="329" id="W6d-dd-zcr"/>
+                            <constraint firstItem="etU-x6-9HU" firstAttribute="leading" secondItem="ChC-pT-jof" secondAttribute="leadingMargin" constant="-16" id="cdh-gq-Hsd"/>
+                            <constraint firstItem="1bx-5p-0no" firstAttribute="leading" secondItem="ChC-pT-jof" secondAttribute="leadingMargin" constant="101" id="eAd-N7-ItL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="etU-x6-9HU" secondAttribute="trailing" constant="-16" id="gVA-Ag-Lze"/>
+                            <constraint firstItem="1bx-5p-0no" firstAttribute="top" secondItem="dhI-M1-qD4" secondAttribute="bottom" constant="71" id="qNU-TK-sfD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1bx-5p-0no" secondAttribute="trailing" constant="101" id="tLW-Qd-YBC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="y47-Fg-GKU" secondAttribute="leading" id="vAP-fX-GgO"/>
+                            <constraint firstItem="gux-fr-AFm" firstAttribute="top" secondItem="1bx-5p-0no" secondAttribute="bottom" constant="326" id="xbR-z4-bHv"/>
+                            <constraint firstItem="y47-Fg-GKU" firstAttribute="top" secondItem="etU-x6-9HU" secondAttribute="bottom" constant="144" id="yJG-wX-Pgd"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vrx-j0-mbt" appends="YES" id="U5x-zf-hqR"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="Sprite" destination="1bx-5p-0no" id="J3f-Hi-h1R"/>
+                        <outlet property="StartText" destination="ChC-pT-jof" id="UAy-AM-GXc"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="showGame" id="Svd-i9-uEO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fro-UV-5w2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vrx-j0-mbt">
+                    <connections>
+                        <action selector="TouchScreen:" destination="rlK-g0-E3t" id="pxx-9Y-goC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-770.39999999999998" y="37.331334332833585"/>
         </scene>
@@ -57,6 +94,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="143" y="37"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sprite" width="141" height="250"/>
+    </resources>
 </document>

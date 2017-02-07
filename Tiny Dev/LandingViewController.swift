@@ -24,6 +24,7 @@ class LandingViewController: UIViewController {
         }
     }
     
+    var soundPlayer = AVPlayer()
     
     // Bringing in elements from the view
     @IBOutlet weak var StartText: UIView!
@@ -42,6 +43,24 @@ class LandingViewController: UIViewController {
             audioPlayer?.numberOfLoops = 5
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
+
+    func playSoundEffect(filename: String) {
+        var soundPlayer = AVAudioPlayer()
+        let url = Bundle.main.url(forAuxiliaryExecutable: filename)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: newURL)
+            soundPlayer.numberOfLoops = 1
+            soundPlayer.prepareToPlay()
+            soundPlayer.play()
+            
         } catch let error as NSError {
             print(error.description)
         }
@@ -87,9 +106,13 @@ class LandingViewController: UIViewController {
     }
     
     
+    @IBAction func Beep(_ sender: Any) {
+        playSoundEffect(filename:"Beep19.wav")
+    }
     
 
     @IBAction func TouchScreen(_ sender: Any) {
+        playBackgroundMusic(filename:"StartNoise.wav")
          self.performSegue(withIdentifier: "showGame", sender: sender)
         print("TOUCHED")
     }

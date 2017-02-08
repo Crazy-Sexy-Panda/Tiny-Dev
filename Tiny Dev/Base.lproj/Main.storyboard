@@ -38,8 +38,15 @@
                                 <gestureRecognizers/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch To Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y47-Fg-GKU">
-                                <rect key="frame" x="16" y="616" width="343" height="20"/>
+                                <rect key="frame" x="16" y="616" width="343" height="17"/>
                                 <fontDescription key="fontDescription" name="PressStart2P-Regular" family="Press Start 2P" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LABEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zno-re-UIO">
+                                <rect key="frame" x="16" y="495" width="343" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -64,6 +71,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="FunText" destination="Zno-re-UIO" id="7Iq-Cc-Fkd"/>
                         <outlet property="Sprite" destination="1bx-5p-0no" id="J3f-Hi-h1R"/>
                         <outlet property="StartText" destination="ChC-pT-jof" id="UAy-AM-GXc"/>
                         <segue destination="BV1-FR-VrT" kind="show" identifier="showGame" id="Svd-i9-uEO"/>

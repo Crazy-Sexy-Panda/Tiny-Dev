@@ -74,26 +74,7 @@ class LandingViewController: UIViewController {
         
         super.viewDidLoad()
         
-        let urlString = URL(string: "http://www.omdbapi.com/?i=tt0115433")
-        if let url = urlString {
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print(error)
-                } else {
-                    if let usableData = data {
-                        let requestData = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String:Any]
-                        
-                            print(requestData)
-                        
-                        
-                            self.FunText.text = (requestData)!!["Title"] as! String?
-                        
-                    }
-                }
-            }
-            task.resume()
-        }
-        
+               
         // creating animation function for image
         let pulseAnimation = CABasicAnimation(keyPath: "opacity")
         pulseAnimation.duration = 1

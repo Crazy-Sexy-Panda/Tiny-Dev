@@ -62,6 +62,7 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         stopBackgroundMusic(filename: "TitleMusic.mp3")
         playBackgroundMusic(filename: "gameMusic.mp3")
         let scene = GameScene(size:view.bounds.size)

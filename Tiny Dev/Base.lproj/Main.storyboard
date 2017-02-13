@@ -89,26 +89,8 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="KYb-gj-hXB">
-                                <rect key="frame" x="-156" y="-294" width="768" height="1024"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="idledev1" translatesAutoresizingMaskIntoConstraints="NO" id="ZzY-gh-AAc" customClass="DevImage" customModule="Tiny_Dev" customModuleProvider="target">
-                                <rect key="frame" x="79" y="169" width="200" height="300"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="qHh-Mt-9TT" firstAttribute="top" secondItem="ZzY-gh-AAc" secondAttribute="bottom" constant="198" id="AVS-yi-iwd"/>
-                            <constraint firstItem="ZzY-gh-AAc" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="149" id="AfN-Ki-ZPq"/>
-                            <constraint firstItem="ZzY-gh-AAc" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="63" id="c8l-F6-e2W"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZzY-gh-AAc" secondAttribute="trailing" constant="80" id="ceS-Si-pa8"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="DevImage" destination="ZzY-gh-AAc" id="JqH-DG-oy3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -116,8 +98,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg" width="768" height="1024"/>
-        <image name="idledev1" width="200" height="300"/>
         <image name="sprite" width="141" height="250"/>
     </resources>
 </document>

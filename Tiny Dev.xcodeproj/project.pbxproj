@@ -11,6 +11,7 @@
 		0456049B1E4A736F0098A771 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456049A1E4A736F0098A771 /* gameMusic.mp3 */; };
 		045604A21E4A77230098A771 /* Beep19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 045604A11E4A77230098A771 /* Beep19.wav */; };
 		04BF7EAE1E521D8800147677 /* DevImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF7EAD1E521D8800147677 /* DevImage.swift */; };
+		04BF7EB01E522EDF00147677 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF7EAF1E522EDF00147677 /* GameScene.swift */; };
 		04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBA51E4A413800853720 /* AppDelegate.swift */; };
 		04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBAD1E4A413800853720 /* GameViewController.swift */; };
 		04EDFBB11E4A413800853720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBAF1E4A413800853720 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		0456049A1E4A736F0098A771 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
 		045604A11E4A77230098A771 /* Beep19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Beep19.wav; sourceTree = "<group>"; };
 		04BF7EAD1E521D8800147677 /* DevImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevImage.swift; sourceTree = "<group>"; };
+		04BF7EAF1E522EDF00147677 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
 		04EDFBA21E4A413800853720 /* Tiny Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tiny Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDFBA51E4A413800853720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EDFBAD1E4A413800853720 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				04EDFBC11E4A4B5A00853720 /* Fonts */,
 				04EDFBA51E4A413800853720 /* AppDelegate.swift */,
 				04EDFBAD1E4A413800853720 /* GameViewController.swift */,
+				04BF7EAF1E522EDF00147677 /* GameScene.swift */,
 				04BF7EAD1E521D8800147677 /* DevImage.swift */,
 				04EDFBBD1E4A43E700853720 /* LandingViewController.swift */,
 				04EDFBAF1E4A413800853720 /* Main.storyboard */,
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BF7EB01E522EDF00147677 /* GameScene.swift in Sources */,
 				04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */,
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
 				04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */,

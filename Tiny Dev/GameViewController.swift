@@ -8,13 +8,10 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
 import AVFoundation
 
 class GameViewController: UIViewController {
-    
 
-    @IBOutlet var DevImage: DevImage!
     
     // Get Shared Audio Player
     
@@ -67,6 +64,12 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         stopBackgroundMusic(filename: "TitleMusic.mp3")
         playBackgroundMusic(filename: "gameMusic.mp3")
+        let scene = GameScene(size:view.bounds.size)
+        let skView = view as! SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        scene.scaleMode = .resizeFill
+        skView.presentScene(scene)
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         

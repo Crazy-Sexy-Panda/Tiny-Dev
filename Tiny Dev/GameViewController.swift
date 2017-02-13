@@ -11,6 +11,15 @@ import SpriteKit
 import AVFoundation
 
 class GameViewController: UIViewController {
+    
+    @IBOutlet weak var BeerImage: DragImage!
+    
+    
+    
+    
+//    var paddleImage = DragImage (imageNamed: "ping.png")
+//    var beerImage = DragImage (named: "beer.png")
+//    var codeImage = DragImage (named: "beer.png")
 
     
     // Get Shared Audio Player
@@ -70,9 +79,19 @@ class GameViewController: UIViewController {
         skView.showsFPS = true
         skView.showsNodeCount = true
         scene.scaleMode = .resizeFill
+        
+        
+        BeerImage.dropTarget = TinyDev
+        
+        
+        
         skView.presentScene(scene)
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
+        
+        
+        
+        
         
     }
 }

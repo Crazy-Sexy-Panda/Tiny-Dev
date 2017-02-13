@@ -19,6 +19,7 @@
 		04EDFBB61E4A413800853720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBB41E4A413800853720 /* LaunchScreen.storyboard */; };
 		04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBBD1E4A43E700853720 /* LandingViewController.swift */; };
 		04EDFBC01E4A4AFD00853720 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */; };
+		08C768781E5253CA00A7D198 /* DragImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C768771E5253CA00A7D198 /* DragImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		04EDFBB71E4A413800853720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04EDFBBD1E4A43E700853720 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
+		08C768771E5253CA00A7D198 /* DragImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				04EDFBB21E4A413800853720 /* Assets.xcassets */,
 				04EDFBB41E4A413800853720 /* LaunchScreen.storyboard */,
 				04EDFBB71E4A413800853720 /* Info.plist */,
+				08C768771E5253CA00A7D198 /* DragImage.swift */,
 			);
 			path = "Tiny Dev";
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BF7EB01E522EDF00147677 /* GameScene.swift in Sources */,
+				08C768781E5253CA00A7D198 /* DragImage.swift in Sources */,
 				04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */,
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
 				04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */,

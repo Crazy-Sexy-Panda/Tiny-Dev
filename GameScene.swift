@@ -14,8 +14,10 @@ class GameScene: SKScene {
     
     let TinyDev = DevImage()
 
+
     let background = SKSpriteNode(imageNamed: "bedroom4.png")
-    
+    var movableNode : SKSpriteNode?
+    var initialPositionPing = CGPoint(x:70.5, y:573.5)
      override func didMove(to view: SKView) {
         
         //setting background behind dev
@@ -46,23 +48,56 @@ class GameScene: SKScene {
         let actionBack = SKAction.move(to: CGPoint(x: size.width * 0.8, y: size.height * 0.19), duration: TimeInterval(1.0))
         let actions = SKAction.repeatForever((SKAction.sequence([actionMove, actionBack])))
         TinyDev.run(actions)
+        
+        //ping stuff
+        let ping = SKSpriteNode(imageNamed: "ping.png")
+        ping.position = initialPositionPing
+        ping.name = "ping"
+        ping.zPosition = 3
+        addChild(ping)
+        
+     
     }
+    
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             let touch = touches.first
             let positionInScene = touch?.location(in: self)
             let touchedNode = self.atPoint(positionInScene!)
             
-            if let name = touchedNode.name
+            if var name = touchedNode.name
             {
-                if name == "DevImage"
-                {
-                    print("Touched")
+                if name == "ping" {
+                        movableNode = childNode(withName: "ping") as! SKSpriteNode?
+                    }
                 }
             }
         
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first, movableNode != nil {
+            movableNode!.position = touch.location(in: self)
+        }
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        if let touch = touches.first, movableNode != nil {
+            let positionInScene = touch.location(in: self)
+            let touchedNode = self.atPoint(positionInScene)
+                if (movableNode?.intersects(TinyDev))!{
+                    print("PRINTING FOR REAL")
+                movableNode!.position = initialPositionPing
+                movableNode = nil
+                
+                } else {
+            movableNode!.position = touch.location(in: self)
+            movableNode = nil
+            }
+        }
+    }
+    
+    
+        }
 
 
-}

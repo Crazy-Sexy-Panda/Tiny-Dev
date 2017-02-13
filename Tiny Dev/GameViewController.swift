@@ -12,7 +12,7 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-    @IBOutlet weak var BeerImage: DragImage!
+
     
     
     
@@ -80,8 +80,7 @@ class GameViewController: UIViewController {
         skView.showsNodeCount = true
         scene.scaleMode = .resizeFill
         
-        
-        BeerImage.dropTarget = TinyDev
+    
         
         
         

@@ -17,10 +17,16 @@ class GameScene: SKScene {
 
     let background = SKSpriteNode(imageNamed: "bedroom4.png")
     var movableNode : SKSpriteNode?
-    var initialPositionPing = CGPoint(x:70.5, y:573.5)
-    var initialPositionBeer = CGPoint(x:141, y:573.5)
-    var initialPositionCode = CGPoint(x: 211.5, y:573.5)
+    
+    var initialPositionPing: CGPoint?
+    var initialPositionBeer: CGPoint?
+    var initialPositionCode: CGPoint?
+    
      override func didMove(to view: SKView) {
+        initialPositionPing = CGPoint(x:frame.size.width/6,  y:573.5)
+        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:573.5)
+        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:573.5)
+
         
         //setting background behind dev
         background.zPosition = 1
@@ -53,22 +59,25 @@ class GameScene: SKScene {
         
         //ping stuff
         let ping = SKSpriteNode(imageNamed: "ping.png")
-        ping.position = initialPositionPing
+        ping.position = initialPositionPing!
         ping.name = "ping"
+        ping.size = CGSize(width: 100, height: 100)
         ping.zPosition = 3
         addChild(ping)
         
         //beer stuff
         let beer = SKSpriteNode(imageNamed: "beer.png")
-        beer.position = initialPositionBeer
+        beer.position = initialPositionBeer!
         beer.name = "beer"
+        beer.size = CGSize(width: 100, height: 100)
         beer.zPosition = 3
         addChild(beer)
         
         //code stuff
         let code = SKSpriteNode(imageNamed: "code.png")
-        code.position = initialPositionCode
+        code.position = initialPositionCode!
         code.name = "code"
+        code.size = CGSize(width: 100, height: 100)
         code.zPosition = 3
         addChild(code)
     }
@@ -107,13 +116,13 @@ class GameScene: SKScene {
                 if (movableNode?.intersects(TinyDev))!{
                     print("PRINTING FOR REAL")
                     if (movableNode?.name == "ping"){
-                        movableNode!.position = initialPositionPing
+                        movableNode!.position = initialPositionPing!
                         movableNode = nil
                     } else if (movableNode?.name == "beer") {
-                        movableNode!.position = initialPositionBeer
+                        movableNode!.position = initialPositionBeer!
                         movableNode = nil
                     } else if (movableNode?.name == "code") {
-                        movableNode!.position = initialPositionCode
+                        movableNode!.position = initialPositionCode!
                         movableNode = nil
                     }
                 } else {

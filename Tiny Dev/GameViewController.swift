@@ -15,13 +15,6 @@ class GameViewController: UIViewController {
 
     
     
-    
-    
-//    var paddleImage = DragImage (imageNamed: "ping.png")
-//    var beerImage = DragImage (named: "beer.png")
-//    var codeImage = DragImage (named: "beer.png")
-
-    
     // Get Shared Audio Player
     
     var audioPlayer : AVAudioPlayer? {

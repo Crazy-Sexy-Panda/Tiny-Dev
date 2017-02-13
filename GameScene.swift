@@ -18,6 +18,8 @@ class GameScene: SKScene {
     let background = SKSpriteNode(imageNamed: "bedroom4.png")
     var movableNode : SKSpriteNode?
     var initialPositionPing = CGPoint(x:70.5, y:573.5)
+    var initialPositionBeer = CGPoint(x:141, y:573.5)
+    var initialPositionCode = CGPoint(x: 211.5, y:573.5)
      override func didMove(to view: SKView) {
         
         //setting background behind dev
@@ -56,7 +58,19 @@ class GameScene: SKScene {
         ping.zPosition = 3
         addChild(ping)
         
-     
+        //beer stuff
+        let beer = SKSpriteNode(imageNamed: "beer.png")
+        beer.position = initialPositionBeer
+        beer.name = "beer"
+        beer.zPosition = 3
+        addChild(beer)
+        
+        //code stuff
+        let code = SKSpriteNode(imageNamed: "code.png")
+        code.position = initialPositionCode
+        code.name = "code"
+        code.zPosition = 3
+        addChild(code)
     }
     
     
@@ -66,14 +80,19 @@ class GameScene: SKScene {
             let positionInScene = touch?.location(in: self)
             let touchedNode = self.atPoint(positionInScene!)
             
-            if var name = touchedNode.name
-            {
-                if name == "ping" {
-                        movableNode = childNode(withName: "ping") as! SKSpriteNode?
-                    }
-                }
+        if var name = touchedNode.name
+        {
+            if name == "ping" {
+                movableNode = childNode(withName: "ping") as! SKSpriteNode?
+            } else if name == "beer" {
+                movableNode = childNode(withName: "beer") as! SKSpriteNode?
+            } else if name == "code" {
+                movableNode = childNode(withName: "code") as! SKSpriteNode?
             }
-        
+
+        }
+            }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first, movableNode != nil {
             movableNode!.position = touch.location(in: self)
@@ -87,9 +106,16 @@ class GameScene: SKScene {
             let touchedNode = self.atPoint(positionInScene)
                 if (movableNode?.intersects(TinyDev))!{
                     print("PRINTING FOR REAL")
-                movableNode!.position = initialPositionPing
-                movableNode = nil
-                
+                    if (movableNode?.name == "ping"){
+                        movableNode!.position = initialPositionPing
+                        movableNode = nil
+                    } else if (movableNode?.name == "beer") {
+                        movableNode!.position = initialPositionBeer
+                        movableNode = nil
+                    } else if (movableNode?.name == "code") {
+                        movableNode!.position = initialPositionCode
+                        movableNode = nil
+                    }
                 } else {
             movableNode!.position = touch.location(in: self)
             movableNode = nil

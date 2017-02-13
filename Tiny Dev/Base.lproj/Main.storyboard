@@ -66,7 +66,7 @@
                     <connections>
                         <outlet property="Sprite" destination="1bx-5p-0no" id="J3f-Hi-h1R"/>
                         <outlet property="StartText" destination="ChC-pT-jof" id="UAy-AM-GXc"/>
-                        <segue destination="BV1-FR-VrT" kind="show" identifier="showGame" id="Svd-i9-uEO"/>
+                        <segue destination="kuc-6t-JsI" kind="show" identifier="showSignIn" id="5MA-AR-vyR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fro-UV-5w2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -77,6 +77,24 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-770.39999999999998" y="37.331334332833585"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="5iQ-nO-KX3">
+            <objects>
+                <viewController id="kuc-6t-JsI" customClass="SignInViewController" customModule="Tiny_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oo9-8h-nNf"/>
+                        <viewControllerLayoutGuide type="bottom" id="zCK-iq-8IB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qyr-xI-yUo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqA-qr-cgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102" y="36"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -94,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="37"/>
+            <point key="canvasLocation" x="1063" y="37"/>
         </scene>
     </scenes>
     <resources>

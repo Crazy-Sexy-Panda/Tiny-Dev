@@ -1,0 +1,6 @@
+framework module Pods_Tiny_Dev {
+  umbrella header "Pods-Tiny Dev-umbrella.h"
+
+  export *
+  module * { export * }
+}

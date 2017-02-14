@@ -27,6 +27,9 @@ class GameScene: SKScene {
     var counter = 0
     var itemArray:Array<SKSpriteNode>?
     var randomIndex:Int?
+    
+     let ping = Item(imageNamed: "ping.png")
+    
      override func didMove(to view: SKView) {
         initialPositionPing = CGPoint(x:frame.size.width/6,  y:573.5)
         initialPositionBeer = CGPoint(x:frame.size.width/2,  y:573.5)
@@ -63,12 +66,13 @@ class GameScene: SKScene {
         TinyDev.run(actions)
         
         //ping stuff
-        let ping = SKSpriteNode(imageNamed: "ping.png")
+       
         ping.position = initialPositionPing!
         ping.name = "ping"
         ping.size = CGSize(width: 100, height: 100)
         ping.zPosition = 3
         ping.alpha = Dim_Alpha
+        ping.active = false
         addChild(ping)
         
         //beer stuff
@@ -94,6 +98,11 @@ class GameScene: SKScene {
         // randomIndex = Int(arc4random_uniform(UInt32((self.count)!)))
         //Time Functions 
         updateCounter()
+        
+        
+        
+        
+        
     }
     
     
@@ -159,11 +168,21 @@ class GameScene: SKScene {
         let time: String = "\(counter) seconds have passed"
         print(time) //for the console
         print(itemArray?.sample())
+        print(ping.active)
         
     }
     
-        }
 
+    
+    class Item: SKSpriteNode {
+        var active = false
+    
+    }
+
+    
+    
+    
+        }
 
 extension Array {
     func sample() -> Element {
@@ -171,3 +190,8 @@ extension Array {
         return self[randomIndex]
     }
 }
+
+
+
+
+

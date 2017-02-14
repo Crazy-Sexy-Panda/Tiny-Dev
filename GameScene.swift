@@ -21,7 +21,12 @@ class GameScene: SKScene {
     var initialPositionPing: CGPoint?
     var initialPositionBeer: CGPoint?
     var initialPositionCode: CGPoint?
-    
+    var Opaque:CGFloat = 1
+    var Dim_Alpha:CGFloat = 0.5
+    var customTimer: Timer?
+    var counter = 0
+    var itemArray:Array<SKSpriteNode>?
+    var randomIndex:Int?
      override func didMove(to view: SKView) {
         initialPositionPing = CGPoint(x:frame.size.width/6,  y:573.5)
         initialPositionBeer = CGPoint(x:frame.size.width/2,  y:573.5)
@@ -63,6 +68,7 @@ class GameScene: SKScene {
         ping.name = "ping"
         ping.size = CGSize(width: 100, height: 100)
         ping.zPosition = 3
+        ping.alpha = Dim_Alpha
         addChild(ping)
         
         //beer stuff
@@ -71,6 +77,7 @@ class GameScene: SKScene {
         beer.name = "beer"
         beer.size = CGSize(width: 100, height: 100)
         beer.zPosition = 3
+        beer.alpha = Dim_Alpha
         addChild(beer)
         
         //code stuff
@@ -79,7 +86,14 @@ class GameScene: SKScene {
         code.name = "code"
         code.size = CGSize(width: 100, height: 100)
         code.zPosition = 3
+        code.alpha = Dim_Alpha
         addChild(code)
+        
+        //create item array
+        itemArray = [ping,beer,code]
+        // randomIndex = Int(arc4random_uniform(UInt32((self.count)!)))
+        //Time Functions 
+        updateCounter()
     }
     
     
@@ -93,10 +107,13 @@ class GameScene: SKScene {
         {
             if name == "ping" {
                 movableNode = childNode(withName: "ping") as! SKSpriteNode?
+                movableNode?.alpha = Opaque
             } else if name == "beer" {
                 movableNode = childNode(withName: "beer") as! SKSpriteNode?
+                movableNode?.alpha = Opaque
             } else if name == "code" {
                 movableNode = childNode(withName: "code") as! SKSpriteNode?
+                movableNode?.alpha = Opaque
             }
 
         }
@@ -114,6 +131,7 @@ class GameScene: SKScene {
             let positionInScene = touch.location(in: self)
             let touchedNode = self.atPoint(positionInScene)
                 if (movableNode?.intersects(TinyDev))!{
+                    movableNode?.alpha = Dim_Alpha
                     print("PRINTING FOR REAL")
                     if (movableNode?.name == "ping"){
                         movableNode!.position = initialPositionPing!
@@ -133,6 +151,23 @@ class GameScene: SKScene {
     }
     
     
+    func updateCounter() {
+        if (customTimer == nil) {
+            customTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        }
+        counter += 1
+        let time: String = "\(counter) seconds have passed"
+        print(time) //for the console
+        print(itemArray?.sample())
+        
+    }
+    
         }
 
 
+extension Array {
+    func sample() -> Element {
+        let randomIndex = Int(arc4random()) % count
+        return self[randomIndex]
+    }
+}

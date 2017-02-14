@@ -116,7 +116,7 @@ class GameScene: SKScene {
         updateCounter()
         
         //initialize health bar width
-        
+        num = healthFill.frame.size.width
         
         
         
@@ -165,6 +165,7 @@ class GameScene: SKScene {
                         movableNode?.alpha = Dim_Alpha
                         movableNode?.active = false
                         movableNode = nil
+                        addHealth()
                     } else if (movableNode?.name == "beer") {
                         movableNode!.position = initialPositionBeer!
                         movableNode?.alpha = Dim_Alpha
@@ -219,13 +220,21 @@ class GameScene: SKScene {
     
     func subtractHealth() {
         if num == nil {
-        num = healthFill.frame.size.width
-        }
+        
+        } else {
         num =  num! - 50.0
         print(num!)
         
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
+        }
         
+    }
+    
+    func addHealth() {
+    
+        num = num! + 50.0
+        healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
+    
     }
     
     class Item: SKSpriteNode {

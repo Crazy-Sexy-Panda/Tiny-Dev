@@ -13,8 +13,6 @@ import SpriteKit
 class GameScene: SKScene {
     
     let TinyDev = DevImage()
-    var progressView: UIProgressView?
-    var progressLabel: UILabel?
 
     let background = SKSpriteNode(imageNamed: "bedroom4.png")
     var movableNode : Item?
@@ -32,6 +30,9 @@ class GameScene: SKScene {
     let ping = Item(imageNamed: "ping.png")
     let beer = Item(imageNamed: "beer.png")
     let code = Item(imageNamed: "code.png")
+    let healthClear = SKSpriteNode(imageNamed: "background.png")
+    let healthFill = SKSpriteNode(imageNamed: "Red Bar.jpg")
+    var num:CGFloat?
     
      override func didMove(to view: SKView) {
         initialPositionPing = CGPoint(x:frame.size.width/6,  y:573.5)
@@ -94,12 +95,27 @@ class GameScene: SKScene {
         code.alpha = Dim_Alpha
         addChild(code)
         
+        //create Health Bar
+        
+        healthClear.position = CGPoint(x:frame.size.width/6,  y: 600)
+        healthClear.zPosition = 5
+        healthClear.size = CGSize(width:400, height: 20)
+        addChild(healthClear)
+        
+        healthFill.position = CGPoint(x:frame.size.width/6,  y: 600)
+        healthFill.zPosition = 5
+        healthFill.size = CGSize(width:400, height: 20)
+        addChild(healthFill)
+        
+     
+        
         //create item array
         itemArray = [ping,beer,code]
         // randomIndex = Int(arc4random_uniform(UInt32((self.count)!)))
         //Time Functions 
         updateCounter()
         
+        //initialize health bar width
         
         
         
@@ -177,6 +193,7 @@ class GameScene: SKScene {
         print(time) //for the console
         print(counter%2)
         selectAndActivate()
+        subtractHealth()
     }
     
     func selectAndActivate() {
@@ -196,6 +213,19 @@ class GameScene: SKScene {
             
           
         }
+    
+    
+    }
+    
+    func subtractHealth() {
+        if num == nil {
+        num = healthFill.frame.size.width
+        }
+        num =  num! - 50.0
+        print(num!)
+        
+        healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
+        
     }
     
     class Item: SKSpriteNode {

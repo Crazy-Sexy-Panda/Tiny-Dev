@@ -20,7 +20,7 @@ class GameScene: SKScene {
     
     var soundPlayer = AVAudioPlayer()
     var score:Int?
-    let background = SKSpriteNode(imageNamed: "bedroom4.png")
+    let background = SKSpriteNode(imageNamed: "gameBG.png")
     var movableNode : Item?
     
     var initialPositionPing: CGPoint?
@@ -33,13 +33,22 @@ class GameScene: SKScene {
     var itemArray:Array<Item> = []
     var randomIndex:Int?
     
-    let ping = Item(imageNamed: "ping.png")
-    let beer = Item(imageNamed: "beer.png")
-    let code = Item(imageNamed: "code.png")
+    let ping = Item(imageNamed: "pinkpong.png")
+    let beer = Item(imageNamed: "yellowpint.png")
+    let code = Item(imageNamed: "greencom.png")
     let healthClear = SKSpriteNode(imageNamed: "Red Bar.jpg")
     let healthFill = SKSpriteNode(imageNamed: "background.png")
     var healthLabel = SKLabelNode()
     var num:CGFloat?
+    
+    let d0 = SKTexture.init(imageNamed: "dead1.png")
+    let d1 = SKTexture.init(imageNamed: "dead2.png")
+    let d2 = SKTexture.init(imageNamed: "dead3.png")
+    let d3 = SKTexture.init(imageNamed: "dead4.png")
+    let d4 = SKTexture.init(imageNamed: "dead5.png")
+    
+   
+    
     
      override func didMove(to view: SKView) {
         initialPositionPing = CGPoint(x:frame.size.width/6,  y:573.5)
@@ -53,25 +62,27 @@ class GameScene: SKScene {
         addChild(background)
         
         //getting multiple png files to animate dev
-        let f0 = SKTexture.init(imageNamed: "idledev1.png")
-        let f1 = SKTexture.init(imageNamed: "idledev2.png")
-        let f2 = SKTexture.init(imageNamed: "idledev3.png")
-        let f3 = SKTexture.init(imageNamed: "idledev4.png")
+        let f0 = SKTexture.init(imageNamed: "dev1.png")
+        let f1 = SKTexture.init(imageNamed: "dev2.png")
+        let f2 = SKTexture.init(imageNamed: "dev3.png")
+        let f3 = SKTexture.init(imageNamed: "dev4.png")
         let frames: [SKTexture] = [f0, f1, f2, f3]
+       
         
         //initial dev position
-        TinyDev.position = CGPoint(x: size.width * 0.5, y: size.height * 0.19)
+        TinyDev.position = CGPoint(x: size.width * 0.5, y: size.height * 0.22)
         TinyDev.zPosition = 2
         
         //using the sktexture variables in array frames to animate dev.
         let animation = SKAction.animate(with: frames, timePerFrame: 0.3)
+        
         TinyDev.run(SKAction.repeatForever(animation))
         
         addChild(TinyDev)
         
         //move dev back and forth
-        let actionMove = SKAction.move(to: CGPoint(x: size.width * 0.2, y: size.height * 0.19), duration: TimeInterval(1.0))
-        let actionBack = SKAction.move(to: CGPoint(x: size.width * 0.8, y: size.height * 0.19), duration: TimeInterval(1.0))
+        let actionMove = SKAction.move(to: CGPoint(x: size.width * 0.2, y: size.height * 0.22), duration: TimeInterval(1.0))
+        let actionBack = SKAction.move(to: CGPoint(x: size.width * 0.8, y: size.height * 0.22), duration: TimeInterval(1.0))
         let actions = SKAction.repeatForever((SKAction.sequence([actionMove, actionBack])))
         TinyDev.run(actions)
         
@@ -261,6 +272,11 @@ class GameScene: SKScene {
     func checkIfAlive() {
         
         if(healthFill.frame.size.width <= 0) {
+            let deadFrame: [SKTexture] = [d0,d1,d2,d3,d4]
+            let deadAnimate = SKAction.animate(with: deadFrame, timePerFrame: 0.2)
+            let dissapear = SKAction.removeFromParent()
+            let sequence = SKAction.sequence([deadAnimate,dissapear])
+            TinyDev.run(sequence)
             beer.removeFromParent()
             code.removeFromParent()
             ping.removeFromParent()

@@ -38,6 +38,7 @@ class GameScene: SKScene {
     let code = Item(imageNamed: "code.png")
     let healthClear = SKSpriteNode(imageNamed: "Red Bar.jpg")
     let healthFill = SKSpriteNode(imageNamed: "background.png")
+    var healthLabel = SKLabelNode()
     var num:CGFloat?
     
      override func didMove(to view: SKView) {
@@ -115,7 +116,7 @@ class GameScene: SKScene {
         
         //Create Label
         
-        var healthLabel = SKLabelNode(fontNamed: "Arial")
+        healthLabel = SKLabelNode(fontNamed: "Arial")
         healthLabel.text = "Dev Health"
         healthLabel.fontSize = 20
         healthLabel.position = CGPoint(x:frame.size.width/5, y: 625)
@@ -243,7 +244,7 @@ class GameScene: SKScene {
         if num == nil {
         
         } else {
-        num =  num! - 10.0
+        num =  num! - 20.0
         
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         }
@@ -258,9 +259,24 @@ class GameScene: SKScene {
     }
     
     func checkIfAlive() {
+        
         if(healthFill.frame.size.width <= 0) {
+            beer.removeFromParent()
+            code.removeFromParent()
+            ping.removeFromParent()
+            healthLabel.removeFromParent()
+            healthFill.removeFromParent()
+            healthClear.removeFromParent()
+        
+            
+            var timer = Timer()
+            let delay = 3.0
+            
             viewController.score = score
-        self.viewController.performSegue(withIdentifier: "showGameOver", sender: self)        }
+            timer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(delayedAction), userInfo: nil, repeats: false)
+           
+            
+            }
     }
     
     class Item: SKSpriteNode {
@@ -271,7 +287,13 @@ class GameScene: SKScene {
     }
 
 
-    
+    func delayedAction() {
+        beer.removeFromParent()
+        code.removeFromParent()
+        healthFill.removeFromParent()
+        healthClear.removeFromParent()
+        self.viewController.performSegue(withIdentifier: "showGameOver", sender: self)
+    }
     
     
         }

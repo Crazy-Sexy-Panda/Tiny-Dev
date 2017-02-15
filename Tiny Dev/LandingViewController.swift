@@ -114,7 +114,7 @@ class LandingViewController: UIViewController {
 
     @IBAction func TouchScreen(_ sender: Any) {
         playSoundEffect(filename:"Beep19.wav")
-         self.performSegue(withIdentifier: "showGame", sender: sender)
+         self.performSegue(withIdentifier: "showSignIn", sender: sender)
         print("TOUCHED")
     }
     /*

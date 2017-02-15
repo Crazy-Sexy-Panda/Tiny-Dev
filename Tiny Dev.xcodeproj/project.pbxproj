@@ -16,6 +16,7 @@
 		04E1DD821E54D3D0000ED038 /* Beer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD811E54D3D0000ED038 /* Beer.mp3 */; };
 		04E1DD841E54D4F2000ED038 /* Keyboard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD831E54D4F2000ED038 /* Keyboard.mp3 */; };
 		04E1DD861E54D7B5000ED038 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */; };
+		04E1DD8A1E54FBF6000ED038 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DD891E54FBF6000ED038 /* SignInViewController.swift */; };
 		04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBA51E4A413800853720 /* AppDelegate.swift */; };
 		04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBAD1E4A413800853720 /* GameViewController.swift */; };
 		04EDFBB11E4A413800853720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBAF1E4A413800853720 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		04E1DD811E54D3D0000ED038 /* Beer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beer.mp3; sourceTree = "<group>"; };
 		04E1DD831E54D4F2000ED038 /* Keyboard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Keyboard.mp3; sourceTree = "<group>"; };
 		04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		04E1DD891E54FBF6000ED038 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		04EDFBA21E4A413800853720 /* Tiny Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tiny Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDFBA51E4A413800853720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EDFBAD1E4A413800853720 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				04EDFBB71E4A413800853720 /* Info.plist */,
 				08C768771E5253CA00A7D198 /* DragImage.swift */,
 				04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */,
+				04E1DD891E54FBF6000ED038 /* SignInViewController.swift */,
 			);
 			path = "Tiny Dev";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				08C768781E5253CA00A7D198 /* DragImage.swift in Sources */,
 				04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */,
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
+				04E1DD8A1E54FBF6000ED038 /* SignInViewController.swift in Sources */,
 				04E1DD861E54D7B5000ED038 /* GameOverViewController.swift in Sources */,
 				04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */,
 				04BF7EAE1E521D8800147677 /* DevImage.swift in Sources */,

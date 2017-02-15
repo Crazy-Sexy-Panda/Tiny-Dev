@@ -66,7 +66,7 @@
                     <connections>
                         <outlet property="Sprite" destination="1bx-5p-0no" id="J3f-Hi-h1R"/>
                         <outlet property="StartText" destination="ChC-pT-jof" id="UAy-AM-GXc"/>
-                        <segue destination="BV1-FR-VrT" kind="show" identifier="showGame" id="Svd-i9-uEO"/>
+                        <segue destination="JEi-z9-wSF" kind="show" identifier="showSignIn" id="vRa-4Q-atx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fro-UV-5w2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,7 +76,90 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-770.39999999999998" y="37.331334332833585"/>
+            <point key="canvasLocation" x="-1484" y="36"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="Scw-Qr-tfy">
+            <objects>
+                <viewController id="JEi-z9-wSF" customClass="SignInViewController" customModule="Tiny_Dev" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zgW-32-I0B"/>
+                        <viewControllerLayoutGuide type="bottom" id="qdu-Qw-1Na"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uON-Ty-bCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ju2-SO-iT0">
+                                <rect key="frame" x="139" y="151" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dev Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whQ-uY-GAr">
+                                <rect key="frame" x="139" y="198" width="97" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pGz-8Q-br4">
+                                <rect key="frame" x="67" y="243" width="250" height="250"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zS5-wY-JAa">
+                                <rect key="frame" x="67" y="511" width="240" height="30"/>
+                                <state key="normal" title="Pick a Photo"/>
+                                <connections>
+                                    <action selector="getPhoto:" destination="JEi-z9-wSF" eventType="touchUpInside" id="3nb-iU-9kc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to Track High Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wc-hz-UTK">
+                                <rect key="frame" x="16" y="20" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sm-UQ-We2">
+                                <rect key="frame" x="67" y="549" width="240" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButton_click:" destination="JEi-z9-wSF" eventType="touchUpInside" id="Ed8-HI-MA8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ju2-SO-iT0" firstAttribute="top" secondItem="6Wc-hz-UTK" secondAttribute="bottom" constant="110" id="6dk-2c-4NK"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6Wc-hz-UTK" secondAttribute="leading" id="7nE-Hm-iKY"/>
+                            <constraint firstItem="pGz-8Q-br4" firstAttribute="leading" secondItem="uON-Ty-bCZ" secondAttribute="leadingMargin" constant="51" id="8Ps-hl-JTf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6Wc-hz-UTK" secondAttribute="trailing" id="AGJ-j1-Z1h"/>
+                            <constraint firstItem="zS5-wY-JAa" firstAttribute="leading" secondItem="uON-Ty-bCZ" secondAttribute="leadingMargin" constant="51" id="Gza-ps-TbH"/>
+                            <constraint firstItem="2Sm-UQ-We2" firstAttribute="leading" secondItem="uON-Ty-bCZ" secondAttribute="leadingMargin" constant="51" id="HIi-oN-1xC"/>
+                            <constraint firstItem="pGz-8Q-br4" firstAttribute="leading" secondItem="uON-Ty-bCZ" secondAttribute="leadingMargin" constant="51" id="HLj-AU-63x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="whQ-uY-GAr" secondAttribute="trailing" constant="123" id="Lfb-4u-w86"/>
+                            <constraint firstItem="pGz-8Q-br4" firstAttribute="top" secondItem="whQ-uY-GAr" secondAttribute="bottom" constant="15" id="T9K-wP-bZA"/>
+                            <constraint firstItem="qdu-Qw-1Na" firstAttribute="top" secondItem="2Sm-UQ-We2" secondAttribute="bottom" constant="198" id="UI0-8d-FRu"/>
+                            <constraint firstItem="whQ-uY-GAr" firstAttribute="top" secondItem="Ju2-SO-iT0" secondAttribute="bottom" constant="17" id="UUH-DT-xdT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zS5-wY-JAa" secondAttribute="trailing" constant="52" id="Ujf-pZ-A34"/>
+                            <constraint firstItem="6Wc-hz-UTK" firstAttribute="top" secondItem="zgW-32-I0B" secondAttribute="bottom" id="adx-Kr-mNl"/>
+                            <constraint firstItem="whQ-uY-GAr" firstAttribute="leading" secondItem="uON-Ty-bCZ" secondAttribute="leadingMargin" constant="123" id="g9p-YO-VVz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ju2-SO-iT0" secondAttribute="trailing" constant="123" id="r8b-ze-TyW"/>
+                            <constraint firstItem="2Sm-UQ-We2" firstAttribute="top" secondItem="zS5-wY-JAa" secondAttribute="bottom" constant="24" id="sEU-AU-ZLW"/>
+                            <constraint firstItem="Ju2-SO-iT0" firstAttribute="leading" secondItem="uON-Ty-bCZ" secondAttribute="leadingMargin" constant="123" id="th7-C0-I4W"/>
+                            <constraint firstItem="zS5-wY-JAa" firstAttribute="top" secondItem="pGz-8Q-br4" secondAttribute="bottom" constant="14" id="vJA-QW-oBQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pGz-8Q-br4" secondAttribute="trailing" constant="52" id="x9G-fU-uB7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Sm-UQ-We2" secondAttribute="trailing" constant="52" id="yWc-aK-UNz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="DevTitle" destination="whQ-uY-GAr" id="gYX-dT-mCh"/>
+                        <outlet property="Name" destination="Ju2-SO-iT0" id="Uf6-xg-Jgm"/>
+                        <outlet property="imageView" destination="pGz-8Q-br4" id="bJO-Yk-cyn"/>
+                        <segue destination="BV1-FR-VrT" kind="show" identifier="showGame" id="2F4-Ec-5dZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0bV-1W-YAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-674.39999999999998" y="25.637181409295355"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
@@ -97,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="36.431784107946029"/>
+            <point key="canvasLocation" x="140" y="26"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="cYs-F3-Nx2">

@@ -8,12 +8,18 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 
 class GameScene: SKScene {
+    var viewController: GameViewController!
     
     let TinyDev = DevImage()
-
+    
+    //sound effects
+    
+    var soundPlayer = AVAudioPlayer()
+    var score:Int?
     let background = SKSpriteNode(imageNamed: "bedroom4.png")
     var movableNode : Item?
     
@@ -30,8 +36,8 @@ class GameScene: SKScene {
     let ping = Item(imageNamed: "ping.png")
     let beer = Item(imageNamed: "beer.png")
     let code = Item(imageNamed: "code.png")
-    let healthClear = SKSpriteNode(imageNamed: "background.png")
-    let healthFill = SKSpriteNode(imageNamed: "Red Bar.jpg")
+    let healthClear = SKSpriteNode(imageNamed: "Red Bar.jpg")
+    let healthFill = SKSpriteNode(imageNamed: "background.png")
     var num:CGFloat?
     
      override func didMove(to view: SKView) {
@@ -57,7 +63,7 @@ class GameScene: SKScene {
         TinyDev.zPosition = 2
         
         //using the sktexture variables in array frames to animate dev.
-        let animation = SKAction.animate(with: frames, timePerFrame: 0.2)
+        let animation = SKAction.animate(with: frames, timePerFrame: 0.3)
         TinyDev.run(SKAction.repeatForever(animation))
         
         addChild(TinyDev)
@@ -97,15 +103,25 @@ class GameScene: SKScene {
         
         //create Health Bar
         
-        healthClear.position = CGPoint(x:frame.size.width/6,  y: 600)
+        healthClear.position = CGPoint(x:frame.size.width/1.5,  y: 635)
         healthClear.zPosition = 5
-        healthClear.size = CGSize(width:400, height: 20)
+        healthClear.size = CGSize(width:200, height: 20)
         addChild(healthClear)
         
-        healthFill.position = CGPoint(x:frame.size.width/6,  y: 600)
+        healthFill.position = CGPoint(x:frame.size.width/1.5,  y: 635)
         healthFill.zPosition = 5
-        healthFill.size = CGSize(width:400, height: 20)
+        healthFill.size = CGSize(width:200, height: 20)
         addChild(healthFill)
+        
+        //Create Label
+        
+        var healthLabel = SKLabelNode(fontNamed: "Arial")
+        healthLabel.text = "Dev Health"
+        healthLabel.fontSize = 20
+        healthLabel.position = CGPoint(x:frame.size.width/5, y: 625)
+        healthLabel.color = UIColor.white
+        healthLabel.zPosition = 6
+        self.addChild(healthLabel)
         
      
         
@@ -118,7 +134,8 @@ class GameScene: SKScene {
         //initialize health bar width
         num = healthFill.frame.size.width
         
-        
+        //set score
+        score = 0
         
         
     }
@@ -161,21 +178,29 @@ class GameScene: SKScene {
                     movableNode?.alpha = Dim_Alpha
                     print("PRINTING FOR REAL")
                     if (movableNode?.name == "ping"){
+                        self.run(SKAction.playSoundFileNamed("PingSound.caf", waitForCompletion: true))
                         movableNode!.position = initialPositionPing!
                         movableNode?.alpha = Dim_Alpha
                         movableNode?.active = false
                         movableNode = nil
+                        score = score! + 1
                         addHealth()
                     } else if (movableNode?.name == "beer") {
+                        self.run(SKAction.playSoundFileNamed("Beer.mp3", waitForCompletion: true))
                         movableNode!.position = initialPositionBeer!
                         movableNode?.alpha = Dim_Alpha
                         movableNode?.active = false
                         movableNode = nil
+                        score = score! + 1
+                        addHealth()
                     } else if (movableNode?.name == "code") {
+                        self.run(SKAction.playSoundFileNamed("Keyboard.mp3", waitForCompletion: true))
                         movableNode!.position = initialPositionCode!
                         movableNode?.alpha = Dim_Alpha
                         movableNode?.active = false
                         movableNode = nil
+                        score = score! + 1
+                        addHealth()
                     }
                 } else {
             movableNode!.position = touch.location(in: self)
@@ -191,14 +216,13 @@ class GameScene: SKScene {
         }
         counter += 1
         let time: String = "\(counter) seconds have passed"
-        print(time) //for the console
-        print(counter%2)
         selectAndActivate()
         subtractHealth()
+        checkIfAlive()
+        print(score)
     }
     
     func selectAndActivate() {
-        print(counter%5)
         if(counter%5==0) {
             
                 if (itemArray[0].active == false || itemArray[1].active == false || itemArray[2].active == false) {
@@ -222,7 +246,7 @@ class GameScene: SKScene {
         if num == nil {
         
         } else {
-        num =  num! - 50.0
+        num =  num! - 10.0
         print(num!)
         
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
@@ -237,12 +261,18 @@ class GameScene: SKScene {
     
     }
     
+    func checkIfAlive() {
+        if(healthFill.frame.size.width <= 0) {
+        self.viewController.performSegue(withIdentifier: "showGameOver", sender: self)        }
+    }
+    
     class Item: SKSpriteNode {
         var active = false
         
     
     
     }
+
 
     
     
@@ -255,7 +285,6 @@ extension Array {
         return self[randomIndex]
     }
 }
-
 
 
 

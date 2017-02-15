@@ -51,6 +51,7 @@ class GameViewController: UIViewController {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: newURL)
             audioPlayer?.numberOfLoops = 5
+            audioPlayer?.volume = 0.2
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
         } catch let error as NSError {
@@ -59,6 +60,16 @@ class GameViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showGameOver"){
+            //prepare for segue to the details view controller
+            let gameOverVC = segue.destination as!  GameOverViewController
+            let gameOverVC.score = self.GameScene.score
+            print("Running")
+            
+            
+        }
+    }
     
     
 
@@ -67,6 +78,7 @@ class GameViewController: UIViewController {
         stopBackgroundMusic(filename: "TitleMusic.mp3")
         playBackgroundMusic(filename: "gameMusic.mp3")
         let scene = GameScene(size:view.bounds.size)
+        scene.viewController = self
         let skView = view as! SKView
         skView.showsFPS = true
         skView.showsNodeCount = true
@@ -81,8 +93,13 @@ class GameViewController: UIViewController {
         // including entities and graphs.
         
         
-        
-        
+     
         
     }
+        
+        
+    
 }
+
+
+

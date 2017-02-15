@@ -176,7 +176,6 @@ class GameScene: SKScene {
             let touchedNode = self.atPoint(positionInScene)
                 if (movableNode?.intersects(TinyDev))!{
                     movableNode?.alpha = Dim_Alpha
-                    print("PRINTING FOR REAL")
                     if (movableNode?.name == "ping"){
                         self.run(SKAction.playSoundFileNamed("PingSound.caf", waitForCompletion: true))
                         movableNode!.position = initialPositionPing!
@@ -219,7 +218,6 @@ class GameScene: SKScene {
         selectAndActivate()
         subtractHealth()
         checkIfAlive()
-        print(score)
     }
     
     func selectAndActivate() {
@@ -231,7 +229,6 @@ class GameScene: SKScene {
                     while (activeItem.active == true) {
                         activeItem = itemArray.sample()
                     }
-                    print(activeItem)
                     activeItem.active = true
                     activeItem.alpha = Opaque
                 }
@@ -247,7 +244,6 @@ class GameScene: SKScene {
         
         } else {
         num =  num! - 10.0
-        print(num!)
         
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         }
@@ -263,6 +259,7 @@ class GameScene: SKScene {
     
     func checkIfAlive() {
         if(healthFill.frame.size.width <= 0) {
+            viewController.score = score
         self.viewController.performSegue(withIdentifier: "showGameOver", sender: self)        }
     }
     

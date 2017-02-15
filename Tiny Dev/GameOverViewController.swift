@@ -9,10 +9,12 @@
 import UIKit
 
 class GameOverViewController: UIViewController {
+    var score:Int?
+    @IBOutlet var scoreText: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        scoreText.text = String(score!)
         // Do any additional setup after loading the view.
     }
 

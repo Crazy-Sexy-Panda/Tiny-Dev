@@ -12,7 +12,7 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
-
+    var score:Int?
     
     
     // Get Shared Audio Player
@@ -64,7 +64,8 @@ class GameViewController: UIViewController {
         if (segue.identifier == "showGameOver"){
             //prepare for segue to the details view controller
             let gameOverVC = segue.destination as!  GameOverViewController
-            let gameOverVC.score = self.GameScene.score
+            print(score)
+            gameOverVC.score = score
             print("Running")
             
             

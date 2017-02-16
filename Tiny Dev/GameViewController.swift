@@ -64,7 +64,7 @@ class GameViewController: UIViewController {
         if (segue.identifier == "showGameOver"){
             //prepare for segue to the details view controller
             FirebaseManager.uploadScore(score:score!)
-            let gameOverVC = segue.destination as!  GameOverViewController
+            let gameOverVC = segue.destination as!  GameOverTableViewController
             print(score)
             gameOverVC.score = score
             

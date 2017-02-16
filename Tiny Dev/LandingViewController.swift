@@ -33,6 +33,11 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var devlogo: UIImageView!
     
     
+    @IBOutlet weak var testGuy: UIImageView!
+    
+    
+    
+    
     // creating audio player function
     func playBackgroundMusic(filename: String) {
         let url = Bundle.main.url(forAuxiliaryExecutable: filename)

@@ -47,6 +47,7 @@ class GameScene: SKScene {
     let d3 = SKTexture.init(imageNamed: "dead4.png")
     let d4 = SKTexture.init(imageNamed: "dead5.png")
     
+    let burstPath = Bundle.main.path(forResource: "pingSpark", ofType: "sks")
    
     
     
@@ -117,24 +118,24 @@ class GameScene: SKScene {
         //create Health Bar
         
         healthClear.position = CGPoint(x:frame.size.width/2,  y: 685)
-        healthClear.zPosition = 5
+        healthClear.zPosition = 7
         healthClear.size = CGSize(width:300, height: 33)
         addChild(healthClear)
         
         healthFill.position = CGPoint(x:frame.size.width/2,  y: 685)
-        healthFill.zPosition = 5
+        healthFill.zPosition = 7
         healthFill.size = CGSize(width:300, height: 33)
         addChild(healthFill)
         
         //Create Label
         
-//        healthLabel = SKLabelNode(fontNamed: "Arial")
-//        healthLabel.text = "Dev Health"
-//        healthLabel.fontSize = 20
-//        healthLabel.position = CGPoint(x:frame.size.width/5, y: 625)
-//        healthLabel.color = UIColor.white
-//        healthLabel.zPosition = 6
-//        self.addChild(healthLabel)
+        healthLabel = SKLabelNode(fontNamed: "Arial")
+        healthLabel.text = "Dev Health"
+        healthLabel.fontSize = 20
+        healthLabel.position = CGPoint(x:frame.size.width/5, y: 625)
+        healthLabel.color = UIColor.white
+        healthLabel.zPosition = 6
+        self.addChild(healthLabel)
         
      
         
@@ -159,18 +160,26 @@ class GameScene: SKScene {
             let touch = touches.first
             let positionInScene = touch?.location(in: self)
             let touchedNode = self.atPoint(positionInScene!)
-            
+        let burstNode = NSKeyedUnarchiver.unarchiveObject(withFile: burstPath!)
+            as! SKEmitterNode
+        
         if var name = touchedNode.name
         {
             if (name == "ping" && ping.active == true) {
                 movableNode = childNode(withName: "ping") as! SKSpriteNode? as! GameScene.Item?
                 movableNode?.alpha = Opaque
+                
+
             } else if (name == "beer" && beer.active == true) {
                 movableNode = childNode(withName: "beer") as! SKSpriteNode? as! GameScene.Item?
                 movableNode?.alpha = Opaque
+
+
             } else if (name == "code" && code.active == true) {
                 movableNode = childNode(withName: "code") as! SKSpriteNode? as! GameScene.Item?
                 movableNode?.alpha = Opaque
+
+
             }
 
         }
@@ -183,7 +192,7 @@ class GameScene: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-
+ 
         if let touch = touches.first, movableNode != nil {
             let positionInScene = touch.location(in: self)
             let touchedNode = self.atPoint(positionInScene)
@@ -234,6 +243,8 @@ class GameScene: SKScene {
     }
     
     func selectAndActivate() {
+        let burstNode = NSKeyedUnarchiver.unarchiveObject(withFile: burstPath!)
+            as! SKEmitterNode
         if(counter%5==0) {
             
                 if (itemArray[0].active == false || itemArray[1].active == false || itemArray[2].active == false) {
@@ -242,17 +253,14 @@ class GameScene: SKScene {
                     while (activeItem.active == true) {
                         activeItem = itemArray.sample()
                     }
-                    let burstPath = Bundle.main.path(forResource: "pingSpark",
-                                                     ofType: "sks")
-                    let burstNode = NSKeyedUnarchiver.unarchiveObject(withFile: burstPath!)
-                        as! SKEmitterNode
-                    burstNode.position = activeItem.position
-        
-                    self.addChild(burstNode)
+                   
                     activeItem.active = true
                     activeItem.alpha = Opaque
-                    
+                    burstNode.position = activeItem.position
+                    self.addChild(burstNode)
+
                 }
+
             
           
         }
@@ -303,6 +311,8 @@ class GameScene: SKScene {
             
             }
     }
+    
+   
     
     class Item: SKSpriteNode {
         var active = false

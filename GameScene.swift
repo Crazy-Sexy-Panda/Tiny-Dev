@@ -250,8 +250,9 @@ class GameScene: SKScene {
         counter += 1
         let time: String = "\(counter) seconds have passed"
         selectAndActivate()
-        changeLevel()
         checkIfAlive()
+        changeLevel()
+        
     }
     
     func selectAndActivate() {
@@ -281,18 +282,17 @@ class GameScene: SKScene {
     }
     
     func changeLevel() {
-       
-            print(counter)
             subtractHealth()
+        
        if (counter > 10){
             print("level2")
             levelLabel.text = "Level Two"
-            num = num! - 15.0
+            num = num! - 10.0
             healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         if (counter > 20) {
             print("level3")
             levelLabel.text = "Level Three"
-            num = num! - 25.0
+            num = num! - 20.0
             healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         }
         
@@ -304,7 +304,7 @@ class GameScene: SKScene {
         if num == nil {
         
         } else {
-        num =  num! - 7.0
+        num =  num! - 5.0
         
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         }
@@ -312,15 +312,18 @@ class GameScene: SKScene {
     }
     
     func addHealth() {
-    
+    print("adding")
         num = num! + 50.0
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
     
     }
     
+    
     func checkIfAlive() {
-        
-        if(healthFill.frame.size.width <= 0) {
+        print(num)
+        print(healthFill.frame.size.width)
+        if(healthFill.frame.size.width <= 10) {
+            print("dedd")
             let deadFrame: [SKTexture] = [d0,d1,d2,d3,d4]
             let deadAnimate = SKAction.animate(with: deadFrame, timePerFrame: 0.2)
             let dissapear = SKAction.removeFromParent()

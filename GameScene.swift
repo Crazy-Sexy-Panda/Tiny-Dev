@@ -241,8 +241,16 @@ class GameScene: SKScene {
                     while (activeItem.active == true) {
                         activeItem = itemArray.sample()
                     }
+                    let burstPath = Bundle.main.path(forResource: "pingSpark",
+                                                     ofType: "sks")
+                    let burstNode = NSKeyedUnarchiver.unarchiveObject(withFile: burstPath!)
+                        as! SKEmitterNode
+                    burstNode.position = activeItem.position
+        
+                    self.addChild(burstNode)
                     activeItem.active = true
                     activeItem.alpha = Opaque
+                    
                 }
             
           

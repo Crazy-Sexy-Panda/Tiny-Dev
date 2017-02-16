@@ -17,6 +17,7 @@
 		04E1DD841E54D4F2000ED038 /* Keyboard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD831E54D4F2000ED038 /* Keyboard.mp3 */; };
 		04E1DD861E54D7B5000ED038 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */; };
 		04E1DD8A1E54FBF6000ED038 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DD891E54FBF6000ED038 /* SignInViewController.swift */; };
+		04E1DD8C1E5521F9000ED038 /* pingSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD8B1E5521F9000ED038 /* pingSpark.sks */; };
 		04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBA51E4A413800853720 /* AppDelegate.swift */; };
 		04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBAD1E4A413800853720 /* GameViewController.swift */; };
 		04EDFBB11E4A413800853720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBAF1E4A413800853720 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		04E1DD831E54D4F2000ED038 /* Keyboard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Keyboard.mp3; sourceTree = "<group>"; };
 		04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		04E1DD891E54FBF6000ED038 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		04E1DD8B1E5521F9000ED038 /* pingSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = pingSpark.sks; sourceTree = "<group>"; };
 		04EDFBA21E4A413800853720 /* Tiny Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tiny Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EDFBA51E4A413800853720 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04EDFBAD1E4A413800853720 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				08C768771E5253CA00A7D198 /* DragImage.swift */,
 				04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */,
 				04E1DD891E54FBF6000ED038 /* SignInViewController.swift */,
+				04E1DD8B1E5521F9000ED038 /* pingSpark.sks */,
 			);
 			path = "Tiny Dev";
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				045604991E4A6DF40098A771 /* TitleMusic.mp3 in Resources */,
 				04EDFBB31E4A413800853720 /* Assets.xcassets in Resources */,
 				04E1DD801E54D272000ED038 /* PingSound.caf in Resources */,
+				04E1DD8C1E5521F9000ED038 /* pingSpark.sks in Resources */,
 				04EDFBB61E4A413800853720 /* LaunchScreen.storyboard in Resources */,
 				0456049B1E4A736F0098A771 /* gameMusic.mp3 in Resources */,
 				045604A21E4A77230098A771 /* Beep19.wav in Resources */,

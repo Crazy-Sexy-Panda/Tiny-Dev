@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rlK-g0-E3t">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rlK-g0-E3t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,35 +22,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="logo3" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-QR-qPP">
-                                <rect key="frame" x="0.0" y="126" width="375" height="81"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="GFV-hO-sNC"/>
-                                </constraints>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="playbutton2" translatesAutoresizingMaskIntoConstraints="NO" id="mKj-9V-byH">
-                                <rect key="frame" x="100" y="512" width="175" height="61"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="landingDev2" translatesAutoresizingMaskIntoConstraints="NO" id="axu-wD-n7g">
-                                <rect key="frame" x="75" y="230" width="200" height="237"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dead1" translatesAutoresizingMaskIntoConstraints="NO" id="dao-wm-tOl">
+                                <rect key="frame" x="67" y="165" width="240" height="306"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="mKj-9V-byH" firstAttribute="trailing" secondItem="axu-wD-n7g" secondAttribute="trailing" id="3Hn-ux-2oc"/>
-                            <constraint firstItem="1J1-QR-qPP" firstAttribute="centerX" secondItem="mKj-9V-byH" secondAttribute="centerX" id="OIg-EY-Bb2"/>
-                            <constraint firstItem="1J1-QR-qPP" firstAttribute="top" secondItem="dhI-M1-qD4" secondAttribute="bottom" constant="106" id="Ud1-Q8-EWD"/>
-                            <constraint firstItem="axu-wD-n7g" firstAttribute="top" secondItem="1J1-QR-qPP" secondAttribute="bottom" constant="23" id="mb3-ik-Xiq"/>
-                            <constraint firstItem="1J1-QR-qPP" firstAttribute="leading" secondItem="ChC-pT-jof" secondAttribute="leading" id="oJM-XQ-nSw"/>
-                            <constraint firstItem="mKj-9V-byH" firstAttribute="top" secondItem="axu-wD-n7g" secondAttribute="bottom" constant="45" id="xYW-ek-b9T"/>
-                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="vrx-j0-mbt" appends="YES" id="U5x-zf-hqR"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="StartText" destination="ChC-pT-jof" id="UAy-AM-GXc"/>
+                        <outlet property="testGuy" destination="dao-wm-tOl" id="ala-ht-TC9"/>
                         <segue destination="JEi-z9-wSF" kind="show" identifier="showSignIn" id="vRa-4Q-atx"/>
                     </connections>
                 </viewController>
@@ -211,7 +196,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2jv-zJ-O21" id="ulu-GG-7b1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sej-x2-46L">
@@ -268,8 +253,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="landingDev2" width="200" height="237"/>
-        <image name="logo3" width="300" height="81"/>
-        <image name="playbutton2" width="175" height="61"/>
+        <image name="dead1" width="870" height="1048"/>
     </resources>
 </document>

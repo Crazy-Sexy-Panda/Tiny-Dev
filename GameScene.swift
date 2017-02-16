@@ -132,7 +132,7 @@ class GameScene: SKScene {
         
         //Create Label
         
-        healthLabel = SKLabelNode(fontNamed: "Arial")
+        healthLabel = SKLabelNode(fontNamed: "Futura")
         healthLabel.text = "Dev Health"
         healthLabel.fontSize = 20
         healthLabel.position = CGPoint(x:frame.size.width/5, y: 630)
@@ -141,7 +141,7 @@ class GameScene: SKScene {
         self.addChild(healthLabel)
         
         //create level label
-        levelLabel = SKLabelNode(fontNamed: "Arial")
+        levelLabel = SKLabelNode(fontNamed: "Futura")
         levelLabel.text = "Level One"
         levelLabel.fontSize = 20
         levelLabel.position = CGPoint(x:frame.size.width/2, y: 660)

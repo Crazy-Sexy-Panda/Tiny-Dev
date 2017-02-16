@@ -33,6 +33,8 @@ class GameScene: SKScene {
     var itemArray:Array<Item> = []
     var randomIndex:Int?
     
+    let level2 = SKSpriteNode(imageNamed: "level2.png")
+    
     let ping = Item(imageNamed: "pinkpong.png")
     let beer = Item(imageNamed: "yellowpint.png")
     let code = Item(imageNamed: "greencom.png")
@@ -152,6 +154,7 @@ class GameScene: SKScene {
         score = 0
         
         
+        
     }
     
     
@@ -238,7 +241,7 @@ class GameScene: SKScene {
         counter += 1
         let time: String = "\(counter) seconds have passed"
         selectAndActivate()
-        subtractHealth()
+        changeLevel()
         checkIfAlive()
     }
     
@@ -268,11 +271,29 @@ class GameScene: SKScene {
     
     }
     
+    func changeLevel() {
+       
+            print(counter)
+            subtractHealth()
+       if (counter > 10){
+            print("level2")
+            num = num! - 15.0
+            healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
+        if (counter > 20) {
+            print("level3")
+            num = num! - 25.0
+            healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
+        }
+        
+    }
+    }
+    
+    
     func subtractHealth() {
         if num == nil {
         
         } else {
-        num =  num! - 20.0
+        num =  num! - 5.0
         
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         }

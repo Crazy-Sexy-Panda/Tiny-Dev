@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041469051E560B5700474C37 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041469041E560B5700474C37 /* FirebaseManager.swift */; };
+		041469071E560BE200474C37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041469061E560BE200474C37 /* GoogleService-Info.plist */; };
 		045604991E4A6DF40098A771 /* TitleMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 045604981E4A6DF40098A771 /* TitleMusic.mp3 */; };
 		0456049B1E4A736F0098A771 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456049A1E4A736F0098A771 /* gameMusic.mp3 */; };
 		045604A21E4A77230098A771 /* Beep19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 045604A11E4A77230098A771 /* Beep19.wav */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041469041E560B5700474C37 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = ../FirebaseManager.swift; sourceTree = "<group>"; };
+		041469061E560BE200474C37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		045604981E4A6DF40098A771 /* TitleMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TitleMusic.mp3; sourceTree = "<group>"; };
 		0456049A1E4A736F0098A771 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
 		045604A11E4A77230098A771 /* Beep19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Beep19.wav; sourceTree = "<group>"; };
@@ -129,9 +133,11 @@
 				04EDFBB21E4A413800853720 /* Assets.xcassets */,
 				04EDFBB41E4A413800853720 /* LaunchScreen.storyboard */,
 				04EDFBB71E4A413800853720 /* Info.plist */,
+				041469061E560BE200474C37 /* GoogleService-Info.plist */,
 				08C768771E5253CA00A7D198 /* DragImage.swift */,
 				04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */,
 				04E1DD891E54FBF6000ED038 /* SignInViewController.swift */,
+				041469041E560B5700474C37 /* FirebaseManager.swift */,
 				04E1DD8B1E5521F9000ED038 /* pingSpark.sks */,
 			);
 			path = "Tiny Dev";
@@ -229,6 +235,7 @@
 				04EDFBC01E4A4AFD00853720 /* PressStart2P-Regular.ttf in Resources */,
 				04EDFBB11E4A413800853720 /* Main.storyboard in Resources */,
 				04E1DD841E54D4F2000ED038 /* Keyboard.mp3 in Resources */,
+				041469071E560BE200474C37 /* GoogleService-Info.plist in Resources */,
 				045604991E4A6DF40098A771 /* TitleMusic.mp3 in Resources */,
 				04EDFBB31E4A413800853720 /* Assets.xcassets in Resources */,
 				04E1DD801E54D272000ED038 /* PingSound.caf in Resources */,
@@ -297,6 +304,7 @@
 				04BF7EB01E522EDF00147677 /* GameScene.swift in Sources */,
 				08C768781E5253CA00A7D198 /* DragImage.swift in Sources */,
 				04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */,
+				041469051E560B5700474C37 /* FirebaseManager.swift in Sources */,
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
 				04E1DD8A1E54FBF6000ED038 /* SignInViewController.swift in Sources */,
 				04E1DD861E54D7B5000ED038 /* GameOverViewController.swift in Sources */,

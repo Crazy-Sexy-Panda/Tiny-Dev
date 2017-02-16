@@ -13,6 +13,9 @@ class SignInViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet var Name: UITextField!
     @IBOutlet var DevTitle: UITextField!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var email: UITextField!
+    @IBOutlet var password: UITextField!
+    var profImageUrl:String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +30,25 @@ class SignInViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func submitButton_click(_ sender: Any) {
+    @IBAction func loginButton_click(_ sender: Any) {
+        FirebaseManager.Login(email: email.text!, password: password.text!) { (success:Bool) in
+            if(success) {
+                self.performSegue(withIdentifier: "showGame", sender: sender)
+            }
+        }
         
-        self.performSegue(withIdentifier: "showGame", sender:sender)
+        
     }
+    @IBAction func submitButton_click(_ sender: Any) {
+        FirebaseManager.CreateAccount(email:email.text!, password:password.text!, name:Name.text!, DevTitle:DevTitle.text!, profImageUrl: profImageUrl!) {
+            (result:String) in
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "showProfile", sender: sender)
+            }
+        }
+    }
+    
+           }
     
     
     @IBAction func getPhoto(_ sender: Any) {

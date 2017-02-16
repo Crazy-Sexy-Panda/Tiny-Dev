@@ -9,6 +9,10 @@
 import UIKit
 
 class GameOverTableViewCell: UITableViewCell {
+    @IBOutlet var name: UILabel!
+    @IBOutlet var DevTitle: UILabel!
+    @IBOutlet var score: UILabel!
+    @IBOutlet var cellImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -28,6 +28,7 @@ class SignInViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func submitButton_click(_ sender: Any) {
+        
         self.performSegue(withIdentifier: "showGame", sender:sender)
     }
     

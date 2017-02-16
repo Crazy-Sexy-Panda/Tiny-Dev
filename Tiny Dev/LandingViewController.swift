@@ -32,10 +32,8 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var Sprite: UIImageView!
     @IBOutlet weak var devlogo: UIImageView!
     
-    
-    @IBOutlet weak var testGuy: UIImageView!
-    
-    
+    @IBOutlet weak var theButton: UIImageView!
+       
     
     
     // creating audio player function
@@ -83,8 +81,8 @@ class LandingViewController: UIViewController {
                
         // creating animation function for image
         let pulseAnimation = CABasicAnimation(keyPath: "opacity")
-        pulseAnimation.duration = 1
-        pulseAnimation.fromValue = 0.5
+        pulseAnimation.duration = 0.8
+        pulseAnimation.fromValue = 0.3
         pulseAnimation.toValue = 1
         pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         pulseAnimation.autoreverses = true
@@ -93,7 +91,8 @@ class LandingViewController: UIViewController {
         
         
        // applying animation to sprite picture
-//        Sprite.layer.add(pulseAnimation, forKey: nil)
+        
+        theButton.layer.add(pulseAnimation, forKey: nil)
         
         
         //play music
@@ -102,7 +101,7 @@ class LandingViewController: UIViewController {
         
         // setting the background
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "landingBG.png")
+        backgroundImage.image = UIImage(named: "BGgame7.png")
         backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at:0)
         

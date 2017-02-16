@@ -30,6 +30,7 @@ class LandingViewController: UIViewController {
     // Bringing in elements from the view
     @IBOutlet weak var StartText: UIView!
     @IBOutlet weak var Sprite: UIImageView!
+    @IBOutlet weak var devlogo: UIImageView!
     
     
     // creating audio player function
@@ -96,7 +97,7 @@ class LandingViewController: UIViewController {
         
         // setting the background
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background.png")
+        backgroundImage.image = UIImage(named: "landingBG.png")
         backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at:0)
         

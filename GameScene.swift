@@ -20,7 +20,7 @@ class GameScene: SKScene {
     
     var soundPlayer = AVAudioPlayer()
     var score:Int?
-    let background = SKSpriteNode(imageNamed: "gameBG.png")
+    let background = SKSpriteNode(imageNamed: "gameBG2.png")
     var movableNode : Item?
     
     var initialPositionPing: CGPoint?
@@ -36,8 +36,8 @@ class GameScene: SKScene {
     let ping = Item(imageNamed: "pinkpong.png")
     let beer = Item(imageNamed: "yellowpint.png")
     let code = Item(imageNamed: "greencom.png")
-    let healthClear = SKSpriteNode(imageNamed: "Red Bar.jpg")
-    let healthFill = SKSpriteNode(imageNamed: "background.png")
+    let healthClear = SKSpriteNode(imageNamed: "bar.jpg")
+    let healthFill = SKSpriteNode(imageNamed: "barFill.png")
     var healthLabel = SKLabelNode()
     var num:CGFloat?
     
@@ -58,6 +58,7 @@ class GameScene: SKScene {
         //setting background behind dev
         background.zPosition = 1
         background.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        background.size = self.frame.size
         
         addChild(background)
         
@@ -115,25 +116,25 @@ class GameScene: SKScene {
         
         //create Health Bar
         
-        healthClear.position = CGPoint(x:frame.size.width/1.5,  y: 635)
+        healthClear.position = CGPoint(x:frame.size.width/2,  y: 685)
         healthClear.zPosition = 5
-        healthClear.size = CGSize(width:200, height: 20)
+        healthClear.size = CGSize(width:300, height: 33)
         addChild(healthClear)
         
-        healthFill.position = CGPoint(x:frame.size.width/1.5,  y: 635)
+        healthFill.position = CGPoint(x:frame.size.width/2,  y: 685)
         healthFill.zPosition = 5
-        healthFill.size = CGSize(width:200, height: 20)
+        healthFill.size = CGSize(width:300, height: 33)
         addChild(healthFill)
         
         //Create Label
         
-        healthLabel = SKLabelNode(fontNamed: "Arial")
-        healthLabel.text = "Dev Health"
-        healthLabel.fontSize = 20
-        healthLabel.position = CGPoint(x:frame.size.width/5, y: 625)
-        healthLabel.color = UIColor.white
-        healthLabel.zPosition = 6
-        self.addChild(healthLabel)
+//        healthLabel = SKLabelNode(fontNamed: "Arial")
+//        healthLabel.text = "Dev Health"
+//        healthLabel.fontSize = 20
+//        healthLabel.position = CGPoint(x:frame.size.width/5, y: 625)
+//        healthLabel.color = UIColor.white
+//        healthLabel.zPosition = 6
+//        self.addChild(healthLabel)
         
      
         

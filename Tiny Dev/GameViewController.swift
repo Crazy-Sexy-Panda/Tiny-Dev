@@ -67,7 +67,6 @@ class GameViewController: UIViewController {
             let gameOverVC = segue.destination as!  GameOverViewController
             print(score)
             gameOverVC.score = score
-            print("Running")
             
             
         }

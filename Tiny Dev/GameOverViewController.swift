@@ -17,7 +17,6 @@ class GameOverViewController: UIViewController {
     @IBOutlet var scoreText: UILabel!
 
     override func viewDidLoad() {
-        print(userID)
         super.viewDidLoad()
         scoreText.text = String(score!)
         // Do any additional setup after loading the view.

@@ -82,8 +82,17 @@ class FirebaseManager: NSObject {
     }
     
     static func uploadScore(score:Int) {
+        
+        print(score)
         let uid = FIRAuth.auth()?.currentUser?.uid
-        databaseRef.child("users").child(uid!).updateChildValues(["score": score])
+        databaseRef.child("users").child(uid!).child("score").observeSingleEvent(of: .childAdded, with: { snapshot in
+            let oldScore = snapshot.value as! Int
+            print(oldScore, score)
+            if (oldScore < score) {
+            databaseRef.child("users").child(uid!).updateChildValues(["score": score])
+            }
+        
+            })
         
     
     }

@@ -88,7 +88,7 @@ class LandingViewController: UIViewController {
         
         
        // applying animation to sprite picture
-        Sprite.layer.add(pulseAnimation, forKey: nil)
+//        Sprite.layer.add(pulseAnimation, forKey: nil)
         
         
         //play music

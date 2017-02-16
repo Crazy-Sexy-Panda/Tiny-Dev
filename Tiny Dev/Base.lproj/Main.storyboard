@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rlK-g0-E3t">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rlK-g0-E3t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,11 +9,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="PressStart2P-Regular.ttf">
-            <string>PressStart2P-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Landing View Controller-->
         <scene sceneID="0aP-wN-xR1">
@@ -27,44 +22,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiny Dev" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etU-x6-9HU">
-                                <rect key="frame" x="0.0" y="349" width="375" height="123"/>
-                                <fontDescription key="fontDescription" name="PressStart2P-Regular" family="Press Start 2P" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="sprite" translatesAutoresizingMaskIntoConstraints="NO" id="1bx-5p-0no">
-                                <rect key="frame" x="117" y="91" width="141" height="250"/>
-                                <gestureRecognizers/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="logo3" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-QR-qPP">
+                                <rect key="frame" x="0.0" y="126" width="375" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="GFV-hO-sNC"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch To Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y47-Fg-GKU">
-                                <rect key="frame" x="16" y="616" width="343" height="17"/>
-                                <fontDescription key="fontDescription" name="PressStart2P-Regular" family="Press Start 2P" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="playbutton2" translatesAutoresizingMaskIntoConstraints="NO" id="mKj-9V-byH">
+                                <rect key="frame" x="100" y="512" width="175" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="landingDev2" translatesAutoresizingMaskIntoConstraints="NO" id="axu-wD-n7g">
+                                <rect key="frame" x="75" y="230" width="200" height="237"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="gux-fr-AFm" firstAttribute="top" secondItem="etU-x6-9HU" secondAttribute="bottom" constant="195" id="2he-RC-EIV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="y47-Fg-GKU" secondAttribute="trailing" id="CDu-0N-iC0"/>
-                            <constraint firstItem="etU-x6-9HU" firstAttribute="top" secondItem="dhI-M1-qD4" secondAttribute="bottom" constant="329" id="W6d-dd-zcr"/>
-                            <constraint firstItem="etU-x6-9HU" firstAttribute="leading" secondItem="ChC-pT-jof" secondAttribute="leadingMargin" constant="-16" id="cdh-gq-Hsd"/>
-                            <constraint firstItem="1bx-5p-0no" firstAttribute="leading" secondItem="ChC-pT-jof" secondAttribute="leadingMargin" constant="101" id="eAd-N7-ItL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="etU-x6-9HU" secondAttribute="trailing" constant="-16" id="gVA-Ag-Lze"/>
-                            <constraint firstItem="1bx-5p-0no" firstAttribute="top" secondItem="dhI-M1-qD4" secondAttribute="bottom" constant="71" id="qNU-TK-sfD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1bx-5p-0no" secondAttribute="trailing" constant="101" id="tLW-Qd-YBC"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="y47-Fg-GKU" secondAttribute="leading" id="vAP-fX-GgO"/>
-                            <constraint firstItem="gux-fr-AFm" firstAttribute="top" secondItem="1bx-5p-0no" secondAttribute="bottom" constant="326" id="xbR-z4-bHv"/>
-                            <constraint firstItem="y47-Fg-GKU" firstAttribute="top" secondItem="etU-x6-9HU" secondAttribute="bottom" constant="144" id="yJG-wX-Pgd"/>
-                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="vrx-j0-mbt" appends="YES" id="U5x-zf-hqR"/>
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="Sprite" destination="1bx-5p-0no" id="J3f-Hi-h1R"/>
                         <outlet property="StartText" destination="ChC-pT-jof" id="UAy-AM-GXc"/>
                         <segue destination="JEi-z9-wSF" kind="show" identifier="showSignIn" id="vRa-4Q-atx"/>
                     </connections>
@@ -76,7 +55,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1484" y="36"/>
+            <point key="canvasLocation" x="-1484" y="35.532233883058474"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="Scw-Qr-tfy">
@@ -259,6 +238,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sprite" width="141" height="250"/>
+        <image name="landingDev2" width="200" height="237"/>
+        <image name="logo3" width="300" height="81"/>
+        <image name="playbutton2" width="175" height="61"/>
     </resources>
 </document>

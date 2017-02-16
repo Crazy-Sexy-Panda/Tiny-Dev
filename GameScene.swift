@@ -41,6 +41,7 @@ class GameScene: SKScene {
     let healthClear = SKSpriteNode(imageNamed: "bar.jpg")
     let healthFill = SKSpriteNode(imageNamed: "barFill.png")
     var healthLabel = SKLabelNode()
+    var levelLabel = SKLabelNode()
     var num:CGFloat?
     
     let d0 = SKTexture.init(imageNamed: "dead1.png")
@@ -139,6 +140,14 @@ class GameScene: SKScene {
         healthLabel.zPosition = 6
         self.addChild(healthLabel)
         
+        //create level label
+        levelLabel = SKLabelNode(fontNamed: "Arial")
+        levelLabel.text = "Level One"
+        levelLabel.fontSize = 20
+        levelLabel.position = CGPoint(x:frame.size.width/2, y: 645)
+        levelLabel.color = UIColor.white
+        levelLabel.zPosition = 6
+        self.addChild(levelLabel)
      
         
         //create item array
@@ -277,10 +286,12 @@ class GameScene: SKScene {
             subtractHealth()
        if (counter > 10){
             print("level2")
+            levelLabel.text = "Level Two"
             num = num! - 15.0
             healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         if (counter > 20) {
             print("level3")
+            levelLabel.text = "Level Three"
             num = num! - 25.0
             healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         }
@@ -293,7 +304,7 @@ class GameScene: SKScene {
         if num == nil {
         
         } else {
-        num =  num! - 5.0
+        num =  num! - 7.0
         
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         }

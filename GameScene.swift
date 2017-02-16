@@ -75,7 +75,7 @@ class GameScene: SKScene {
        
         
         //initial dev position
-        TinyDev.position = CGPoint(x: size.width * 0.5, y: size.height * 0.22)
+        TinyDev.position = CGPoint(x: size.width * 0.5, y: size.height * 0.24)
         TinyDev.zPosition = 2
         
         //using the sktexture variables in array frames to animate dev.
@@ -86,8 +86,8 @@ class GameScene: SKScene {
         addChild(TinyDev)
         
         //move dev back and forth
-        let actionMove = SKAction.move(to: CGPoint(x: size.width * 0.2, y: size.height * 0.22), duration: TimeInterval(1.0))
-        let actionBack = SKAction.move(to: CGPoint(x: size.width * 0.8, y: size.height * 0.22), duration: TimeInterval(1.0))
+        let actionMove = SKAction.move(to: CGPoint(x: size.width * 0.3, y: size.height * 0.24), duration: TimeInterval(1.0))
+        let actionBack = SKAction.move(to: CGPoint(x: size.width * 0.7, y: size.height * 0.24), duration: TimeInterval(1.0))
         let actions = SKAction.repeatForever((SKAction.sequence([actionMove, actionBack])))
         TinyDev.run(actions)
         
@@ -120,12 +120,12 @@ class GameScene: SKScene {
         
         //create Health Bar
         
-        healthClear.position = CGPoint(x:frame.size.width/1.58,  y: 632)
+        healthClear.position = CGPoint(x:frame.size.width/1.58,  y: 635)
         healthClear.zPosition = 7
         healthClear.size = CGSize(width:200, height: 20)
         addChild(healthClear)
         
-        healthFill.position = CGPoint(x:frame.size.width/1.58,  y: 632)
+        healthFill.position = CGPoint(x:frame.size.width/1.58,  y: 635)
         healthFill.zPosition = 7
         healthFill.size = CGSize(width:200, height: 20)
         addChild(healthFill)
@@ -135,7 +135,7 @@ class GameScene: SKScene {
         healthLabel = SKLabelNode(fontNamed: "Arial")
         healthLabel.text = "Dev Health"
         healthLabel.fontSize = 20
-        healthLabel.position = CGPoint(x:frame.size.width/5, y: 625)
+        healthLabel.position = CGPoint(x:frame.size.width/5, y: 630)
         healthLabel.color = UIColor.white
         healthLabel.zPosition = 6
         self.addChild(healthLabel)
@@ -144,7 +144,7 @@ class GameScene: SKScene {
         levelLabel = SKLabelNode(fontNamed: "Arial")
         levelLabel.text = "Level One"
         levelLabel.fontSize = 20
-        levelLabel.position = CGPoint(x:frame.size.width/2, y: 645)
+        levelLabel.position = CGPoint(x:frame.size.width/2, y: 660)
         levelLabel.color = UIColor.white
         levelLabel.zPosition = 6
         self.addChild(levelLabel)

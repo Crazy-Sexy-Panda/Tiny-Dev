@@ -48,7 +48,7 @@ class SignInViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
     }
     
-           }
+           
     
     
     @IBAction func getPhoto(_ sender: Any) {

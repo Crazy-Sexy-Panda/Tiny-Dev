@@ -258,6 +258,7 @@ class GameScene: SKScene {
     func selectAndActivate() {
         let burstNode = NSKeyedUnarchiver.unarchiveObject(withFile: burstPath!)
             as! SKEmitterNode
+      
         if(counter%5==0) {
             
                 if (itemArray[0].active == false || itemArray[1].active == false || itemArray[2].active == false) {
@@ -275,8 +276,9 @@ class GameScene: SKScene {
                 }
 
             
-          
-        }
+            
+ 
+    }
     
     
     }
@@ -294,7 +296,7 @@ class GameScene: SKScene {
             levelLabel.text = "Level Three"
             num = num! - 20.0
             healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
-        }
+    }
         
     }
     }

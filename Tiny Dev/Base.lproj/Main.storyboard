@@ -22,19 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="logo3" translatesAutoresizingMaskIntoConstraints="NO" id="1J1-QR-qPP">
-                                <rect key="frame" x="0.0" y="126" width="375" height="81"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="GFV-hO-sNC"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youButton" translatesAutoresizingMaskIntoConstraints="NO" id="vHr-TV-581">
+                                <rect key="frame" x="65" y="558" width="279" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="playbutton2" translatesAutoresizingMaskIntoConstraints="NO" id="mKj-9V-byH">
-                                <rect key="frame" x="100" y="512" width="175" height="61"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="landingDev" translatesAutoresizingMaskIntoConstraints="NO" id="utn-Yt-fuN">
+                                <rect key="frame" x="92" y="202" width="225" height="287"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="landingDev2" translatesAutoresizingMaskIntoConstraints="NO" id="axu-wD-n7g">
-                                <rect key="frame" x="75" y="230" width="200" height="237"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youLogo" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-Ah-LOX">
+                                <rect key="frame" x="59" y="53" width="291" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,6 +42,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="Logo" destination="vHr-TV-581" id="InQ-aY-lgq"/>
                         <outlet property="StartText" destination="ChC-pT-jof" id="UAy-AM-GXc"/>
                         <segue destination="JEi-z9-wSF" kind="show" identifier="showSignIn" id="vRa-4Q-atx"/>
                     </connections>
@@ -238,8 +237,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="landingDev2" width="200" height="237"/>
-        <image name="logo3" width="300" height="81"/>
-        <image name="playbutton2" width="175" height="61"/>
+        <image name="landingDev" width="300" height="356"/>
+        <image name="youButton" width="532" height="188"/>
+        <image name="youLogo" width="702" height="189"/>
     </resources>
 </document>

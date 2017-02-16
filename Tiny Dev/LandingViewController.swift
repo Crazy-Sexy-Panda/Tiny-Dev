@@ -30,7 +30,10 @@ class LandingViewController: UIViewController {
     // Bringing in elements from the view
     @IBOutlet weak var StartText: UIView!
     @IBOutlet weak var Sprite: UIImageView!
-    @IBOutlet weak var devlogo: UIImageView!
+    
+    @IBOutlet weak var Logo: UIImageView!
+    
+
     
     
     // creating audio player function
@@ -75,11 +78,11 @@ class LandingViewController: UIViewController {
         
         super.viewDidLoad()
         
-               
         // creating animation function for image
+        
         let pulseAnimation = CABasicAnimation(keyPath: "opacity")
-        pulseAnimation.duration = 1
-        pulseAnimation.fromValue = 0.5
+        pulseAnimation.duration = 0.5
+        pulseAnimation.fromValue = 0.3
         pulseAnimation.toValue = 1
         pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         pulseAnimation.autoreverses = true
@@ -88,7 +91,7 @@ class LandingViewController: UIViewController {
         
         
        // applying animation to sprite picture
-//        Sprite.layer.add(pulseAnimation, forKey: nil)
+        Logo.layer.add(pulseAnimation, forKey: nil)
         
         
         //play music

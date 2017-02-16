@@ -13,13 +13,13 @@ class Profile: NSObject {
     var name:String
     var DevTitle:String
     var score:Int
-    var profileImageUrl:String
+    var profImageUrl:String
     
-    init(name:String, DevTitle:String, score:Int, profileImageUrl:String) {
+    init(name:String, DevTitle:String, score:Int, profImageUrl:String) {
         self.name = name
         self.DevTitle = DevTitle
         self.score = score
-        self.profileImageUrl = profileImageUrl
+        self.profImageUrl = profImageUrl
         
     }
 

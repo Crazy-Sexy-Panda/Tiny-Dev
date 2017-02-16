@@ -99,9 +99,9 @@ class FirebaseManager: NSObject {
                 let name = result["name"]! as! String
                 let DevTitle = result["DevTitle"]! as! String
                 let score = result["score"]! as! Int
-                let profileImageUrl = result["profileImageUrl"]! as! String
+                let profImageUrl = result["profImageUrl"]! as! String
                 
-                let u = Profile(name:name, DevTitle:DevTitle, score:score, profileImageUrl: profileImageUrl)
+                let u = Profile(name:name, DevTitle:DevTitle, score:score, profImageUrl: profileImageUrl)
                 
                 FirebaseManager.profiles.append(u)
             }

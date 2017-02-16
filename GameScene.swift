@@ -52,9 +52,9 @@ class GameScene: SKScene {
     
     
      override func didMove(to view: SKView) {
-        initialPositionPing = CGPoint(x:frame.size.width/6,  y:573.5)
-        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:573.5)
-        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:573.5)
+        initialPositionPing = CGPoint(x:frame.size.width/6,  y:570)
+        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:570)
+        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:570)
 
         //setting background behind dev
         background.zPosition = 1
@@ -92,7 +92,7 @@ class GameScene: SKScene {
        
         ping.position = initialPositionPing!
         ping.name = "ping"
-        ping.size = CGSize(width: 100, height: 100)
+        ping.size = CGSize(width: 90, height: 90)
         ping.zPosition = 3
         ping.alpha = Dim_Alpha
         addChild(ping)
@@ -101,7 +101,7 @@ class GameScene: SKScene {
         
         beer.position = initialPositionBeer!
         beer.name = "beer"
-        beer.size = CGSize(width: 100, height: 100)
+        beer.size = CGSize(width: 90, height: 90)
         beer.zPosition = 3
         beer.alpha = Dim_Alpha
         addChild(beer)
@@ -110,21 +110,21 @@ class GameScene: SKScene {
         
         code.position = initialPositionCode!
         code.name = "code"
-        code.size = CGSize(width: 100, height: 100)
+        code.size = CGSize(width: 90, height: 90)
         code.zPosition = 3
         code.alpha = Dim_Alpha
         addChild(code)
         
         //create Health Bar
         
-        healthClear.position = CGPoint(x:frame.size.width/2,  y: 685)
+        healthClear.position = CGPoint(x:frame.size.width/1.58,  y: 632)
         healthClear.zPosition = 7
-        healthClear.size = CGSize(width:300, height: 33)
+        healthClear.size = CGSize(width:200, height: 20)
         addChild(healthClear)
         
-        healthFill.position = CGPoint(x:frame.size.width/2,  y: 685)
+        healthFill.position = CGPoint(x:frame.size.width/1.58,  y: 632)
         healthFill.zPosition = 7
-        healthFill.size = CGSize(width:300, height: 33)
+        healthFill.size = CGSize(width:200, height: 20)
         addChild(healthFill)
         
         //Create Label

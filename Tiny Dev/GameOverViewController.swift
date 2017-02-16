@@ -16,6 +16,10 @@ class GameOverViewController: UIViewController {
     let userID = FIRAuth.auth()?.currentUser?.uid
     @IBOutlet var scoreText: UILabel!
 
+    @IBAction func playAgain(_ sender: Any) {
+        self.performSegue(withIdentifier: "showGame", sender: sender)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -24,6 +28,10 @@ class GameOverViewController: UIViewController {
         backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at:0)
         scoreText.text = String(score!)
+        
+        
+        
+
         // Do any additional setup after loading the view.
     }
 

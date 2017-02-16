@@ -33,12 +33,15 @@ class GameScene: SKScene {
     var itemArray:Array<Item> = []
     var randomIndex:Int?
     
+    let level2 = SKSpriteNode(imageNamed: "level2.png")
+    
     let ping = Item(imageNamed: "pinkpong.png")
     let beer = Item(imageNamed: "yellowpint.png")
     let code = Item(imageNamed: "greencom.png")
     let healthClear = SKSpriteNode(imageNamed: "bar.jpg")
     let healthFill = SKSpriteNode(imageNamed: "barFill.png")
     var healthLabel = SKLabelNode()
+    var levelLabel = SKLabelNode()
     var num:CGFloat?
     
     let d0 = SKTexture.init(imageNamed: "dead1.png")
@@ -137,6 +140,14 @@ class GameScene: SKScene {
         healthLabel.zPosition = 6
         self.addChild(healthLabel)
         
+        //create level label
+        levelLabel = SKLabelNode(fontNamed: "Arial")
+        levelLabel.text = "Level One"
+        levelLabel.fontSize = 20
+        levelLabel.position = CGPoint(x:frame.size.width/2, y: 645)
+        levelLabel.color = UIColor.white
+        levelLabel.zPosition = 6
+        self.addChild(levelLabel)
      
         
         //create item array
@@ -150,6 +161,7 @@ class GameScene: SKScene {
         
         //set score
         score = 0
+        
         
         
     }
@@ -238,7 +250,7 @@ class GameScene: SKScene {
         counter += 1
         let time: String = "\(counter) seconds have passed"
         selectAndActivate()
-        subtractHealth()
+        changeLevel()
         checkIfAlive()
     }
     
@@ -268,11 +280,31 @@ class GameScene: SKScene {
     
     }
     
+    func changeLevel() {
+       
+            print(counter)
+            subtractHealth()
+       if (counter > 10){
+            print("level2")
+            levelLabel.text = "Level Two"
+            num = num! - 15.0
+            healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
+        if (counter > 20) {
+            print("level3")
+            levelLabel.text = "Level Three"
+            num = num! - 25.0
+            healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
+        }
+        
+    }
+    }
+    
+    
     func subtractHealth() {
         if num == nil {
         
         } else {
-        num =  num! - 20.0
+        num =  num! - 7.0
         
         healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         }

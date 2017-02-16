@@ -19,6 +19,8 @@ class FirebaseManager: NSObject {
     static var currentUser:FIRUser? = nil
     static var profileImageUrl:String = ""
     static var uid:String = ""
+    static var oldScore:Int?
+    static var profiles = [Profile]()
     
     static func Login(email : String, password : String, completion: @escaping (_ success:Bool)->Void) {
         FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
@@ -82,20 +84,32 @@ class FirebaseManager: NSObject {
     }
     
     static func uploadScore(score:Int) {
-        
-        print(score)
         let uid = FIRAuth.auth()?.currentUser?.uid
-        databaseRef.child("users").child(uid!).child("score").observeSingleEvent(of: .childAdded, with: { snapshot in
-            let oldScore = snapshot.value as! Int
-            print(oldScore, score)
-            if (oldScore < score) {
             databaseRef.child("users").child(uid!).updateChildValues(["score": score])
-            }
         
-            })
-        
+                }
     
+    static func fillScores(completion: @escaping () -> Void) {
+        profiles = []
+    
+        databaseRef.child("users").observe(.childAdded, with: {
+            snapshot in
+            print(snapshot)
+            if let result = snapshot.value as? [String:AnyObject] {
+                let name = result["name"]! as! String
+                let DevTitle = result["DevTitle"]! as! String
+                let score = result["score"]! as! Int
+                let profImageUrl = result["profImageUrl"]! as! String
+                
+                let u = Profile(name:name, DevTitle:DevTitle, score:score, profImageUrl: profileImageUrl)
+                
+                FirebaseManager.profiles.append(u)
+            }
+            completion()
+        })
     }
+            
+    
 }
     
 

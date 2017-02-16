@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		041469051E560B5700474C37 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041469041E560B5700474C37 /* FirebaseManager.swift */; };
 		041469071E560BE200474C37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 041469061E560BE200474C37 /* GoogleService-Info.plist */; };
+		0414690B1E564CF300474C37 /* GameOverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414690A1E564CF300474C37 /* GameOverTableViewController.swift */; };
+		0414690D1E564D7F00474C37 /* GameOverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414690C1E564D7F00474C37 /* GameOverTableViewCell.swift */; };
+		0414690F1E56506A00474C37 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414690E1E56506A00474C37 /* Profile.swift */; };
 		045604991E4A6DF40098A771 /* TitleMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 045604981E4A6DF40098A771 /* TitleMusic.mp3 */; };
 		0456049B1E4A736F0098A771 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456049A1E4A736F0098A771 /* gameMusic.mp3 */; };
 		045604A21E4A77230098A771 /* Beep19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 045604A11E4A77230098A771 /* Beep19.wav */; };
@@ -17,7 +20,6 @@
 		04E1DD801E54D272000ED038 /* PingSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD7F1E54D272000ED038 /* PingSound.caf */; };
 		04E1DD821E54D3D0000ED038 /* Beer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD811E54D3D0000ED038 /* Beer.mp3 */; };
 		04E1DD841E54D4F2000ED038 /* Keyboard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD831E54D4F2000ED038 /* Keyboard.mp3 */; };
-		04E1DD861E54D7B5000ED038 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */; };
 		04E1DD8A1E54FBF6000ED038 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E1DD891E54FBF6000ED038 /* SignInViewController.swift */; };
 		04E1DD8C1E5521F9000ED038 /* pingSpark.sks in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD8B1E5521F9000ED038 /* pingSpark.sks */; };
 		04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EDFBA51E4A413800853720 /* AppDelegate.swift */; };
@@ -34,6 +36,9 @@
 /* Begin PBXFileReference section */
 		041469041E560B5700474C37 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseManager.swift; path = ../FirebaseManager.swift; sourceTree = "<group>"; };
 		041469061E560BE200474C37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0414690A1E564CF300474C37 /* GameOverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverTableViewController.swift; sourceTree = "<group>"; };
+		0414690C1E564D7F00474C37 /* GameOverTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverTableViewCell.swift; path = ../GameOverTableViewCell.swift; sourceTree = "<group>"; };
+		0414690E1E56506A00474C37 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = ../Profile.swift; sourceTree = "<group>"; };
 		045604981E4A6DF40098A771 /* TitleMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TitleMusic.mp3; sourceTree = "<group>"; };
 		0456049A1E4A736F0098A771 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
 		045604A11E4A77230098A771 /* Beep19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Beep19.wav; sourceTree = "<group>"; };
@@ -42,7 +47,6 @@
 		04E1DD7F1E54D272000ED038 /* PingSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingSound.caf; sourceTree = "<group>"; };
 		04E1DD811E54D3D0000ED038 /* Beer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beer.mp3; sourceTree = "<group>"; };
 		04E1DD831E54D4F2000ED038 /* Keyboard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Keyboard.mp3; sourceTree = "<group>"; };
-		04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		04E1DD891E54FBF6000ED038 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		04E1DD8B1E5521F9000ED038 /* pingSpark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = pingSpark.sks; sourceTree = "<group>"; };
 		04EDFBA21E4A413800853720 /* Tiny Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tiny Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +129,8 @@
 				0456049C1E4A73740098A771 /* Sounds */,
 				04EDFBC11E4A4B5A00853720 /* Fonts */,
 				04EDFBA51E4A413800853720 /* AppDelegate.swift */,
+				0414690C1E564D7F00474C37 /* GameOverTableViewCell.swift */,
+				0414690E1E56506A00474C37 /* Profile.swift */,
 				04EDFBAD1E4A413800853720 /* GameViewController.swift */,
 				04BF7EAF1E522EDF00147677 /* GameScene.swift */,
 				04BF7EAD1E521D8800147677 /* DevImage.swift */,
@@ -135,10 +141,10 @@
 				04EDFBB71E4A413800853720 /* Info.plist */,
 				041469061E560BE200474C37 /* GoogleService-Info.plist */,
 				08C768771E5253CA00A7D198 /* DragImage.swift */,
-				04E1DD851E54D7B5000ED038 /* GameOverViewController.swift */,
 				04E1DD891E54FBF6000ED038 /* SignInViewController.swift */,
 				041469041E560B5700474C37 /* FirebaseManager.swift */,
 				04E1DD8B1E5521F9000ED038 /* pingSpark.sks */,
+				0414690A1E564CF300474C37 /* GameOverTableViewController.swift */,
 			);
 			path = "Tiny Dev";
 			sourceTree = "<group>";
@@ -306,10 +312,12 @@
 				04EDFBAE1E4A413800853720 /* GameViewController.swift in Sources */,
 				041469051E560B5700474C37 /* FirebaseManager.swift in Sources */,
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
+				0414690D1E564D7F00474C37 /* GameOverTableViewCell.swift in Sources */,
 				04E1DD8A1E54FBF6000ED038 /* SignInViewController.swift in Sources */,
-				04E1DD861E54D7B5000ED038 /* GameOverViewController.swift in Sources */,
 				04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */,
+				0414690F1E56506A00474C37 /* Profile.swift in Sources */,
 				04BF7EAE1E521D8800147677 /* DevImage.swift in Sources */,
+				0414690B1E564CF300474C37 /* GameOverTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,7 +53,7 @@ class GameOverTableViewController: UITableViewController {
         let u = FirebaseManager.profiles[indexPath.row]
         cell.name.text = u.name
         cell.DevTitle.text = u.DevTitle
-        cell.score.text = u.score as! String
+        cell.score.text = "\(u.score)"
         cell.cellImage.image = getPhoto(url:u.profImageUrl)
         return cell
     }

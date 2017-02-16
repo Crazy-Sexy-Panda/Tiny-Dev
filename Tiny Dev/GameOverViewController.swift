@@ -11,9 +11,18 @@ import UIKit
 class GameOverViewController: UIViewController {
     var score:Int?
     @IBOutlet var scoreText: UILabel!
+    @IBAction func playAgain(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "GameScene", sender: sender)
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // setting the background
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "landingBG.png")
+        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at:0)
         scoreText.text = String(score!)
         // Do any additional setup after loading the view.
     }

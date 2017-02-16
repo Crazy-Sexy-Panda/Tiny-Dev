@@ -48,16 +48,16 @@ class GameOverTableViewController: UITableViewController {
     }
 
     
-//     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameOverTableViewCell
-//        let u = FirebaseManager.profiles[indexPath.row]
-//        cell.name.text = u.name
-//        cell.
+     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameOverTableViewCell
+        let u = FirebaseManager.profiles[indexPath.row]
+        cell.name.text = u.name
+        cell.DevTitle.text = u.DevTitle
+        cell.score.text = u.score as! String
+        cell.cellImage.image = getPhoto(url:u.profImageUrl)
+        return cell
+    }
     
-//
-//        return cell
-//    }
-//    
 
     /*
     // Override to support conditional editing of the table view.
@@ -103,5 +103,15 @@ class GameOverTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func getPhoto(url:String) -> UIImage {
+        if let url = NSURL(string: url) {
+            if let data = NSData(contentsOf: url as URL) {
+                return UIImage(data: data as Data)!
+            }
+        }
+
+        return UIImage()
+    }
 
 }

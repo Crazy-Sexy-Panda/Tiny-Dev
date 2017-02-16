@@ -63,7 +63,7 @@ class GameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showGameOver"){
             //prepare for segue to the details view controller
-            FirebaseManager.uploadScore(score: score!)
+//            FirebaseManager.uploadScore(score: score!)
             let gameOverVC = segue.destination as!  GameOverViewController
             print(score)
             gameOverVC.score = score

@@ -81,20 +81,20 @@ class FirebaseManager: NSObject {
         databaseRef.child("users").child(uid!).setValue(post)
     }
     
-    static func uploadScore(score:Int) {
-        let oldScore:Int?
-        print(score)
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        databaseRef.child("users").child(uid!).child("score").observeSingleEvent(of: .childAdded, with: { snapshot in
-            oldScore = snapshot.value as! Int
-
-            })
-        if(oldScore < score) {
-        databaseRef.child("users").child(uid!).updateChildValues(["score": score])
-        }
-        
-
-    }
+//    static func uploadScore(score:Int) {
+//        let oldScore:Int?
+//        print(score)
+//        let uid = FIRAuth.auth()?.currentUser?.uid
+//        databaseRef.child("users").child(uid!).child("score").observeSingleEvent(of: .childAdded, with: { snapshot in
+//            oldScore = snapshot.value as! Int
+//
+//            })
+////        if(oldScore < score) {
+////        databaseRef.child("users").child(uid!).updateChildValues(["score": score])
+////        }
+//        
+//
+//    }
 }
     
 

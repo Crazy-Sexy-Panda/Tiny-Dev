@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+
 
 class GameOverViewController: UIViewController {
     var score:Int?
+    let userID = FIRAuth.auth()?.currentUser?.uid
     @IBOutlet var scoreText: UILabel!
 
     override func viewDidLoad() {
+        print(userID)
         super.viewDidLoad()
         scoreText.text = String(score!)
         // Do any additional setup after loading the view.

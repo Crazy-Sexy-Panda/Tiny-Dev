@@ -89,7 +89,7 @@ class FirebaseManager: NSObject {
             oldScore = snapshot.value as! Int
 
             })
-        if(oldScore < score) {
+        if(oldScore! < score) {
         databaseRef.child("users").child(uid!).updateChildValues(["score": score])
         }
         

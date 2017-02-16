@@ -238,8 +238,8 @@ class GameScene: SKScene {
         counter += 1
         let time: String = "\(counter) seconds have passed"
         selectAndActivate()
-        subtractHealth()
         checkIfAlive()
+        subtractHealth()
     }
     
     func selectAndActivate() {

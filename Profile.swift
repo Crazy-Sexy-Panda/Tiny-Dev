@@ -23,7 +23,14 @@ class Profile: NSObject {
         
     }
 
-
+    func  getProfileImage() -> UIImage {
+        if let url = NSURL(string: self.profImageUrl) {
+            if let data = NSData(contentsOf: url as URL) {
+                return UIImage(data: data as Data)!
+            }
+        }
+        return UIImage()
+    }
     
     
 }

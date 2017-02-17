@@ -249,7 +249,7 @@ class GameScene: SKScene {
         }
         counter += 1
         let time: String = "\(counter) seconds have passed"
-        selectAndActivate()
+        
         checkIfAlive()
         changeLevel()
         
@@ -283,15 +283,44 @@ class GameScene: SKScene {
     
     }
     
+    func selectAndActivate2() {
+        
+        let burstNode = NSKeyedUnarchiver.unarchiveObject(withFile: burstPath!)
+            as! SKEmitterNode
+        
+        if(counter%2==0) {
+            
+            if (itemArray[0].active == false || itemArray[1].active == false || itemArray[2].active == false) {
+                
+                var activeItem = itemArray.sample()
+                while (activeItem.active == true) {
+                    activeItem = itemArray.sample()
+                }
+                
+                activeItem.active = true
+                activeItem.alpha = Opaque
+                burstNode.position = activeItem.position
+                self.addChild(burstNode)
+                
+            }
+            
+            
+            
+            
+        }
+
+    }
+    
     func changeLevel() {
             subtractHealth()
-        
+            selectAndActivate()
        if (counter > 10){
             print("level2")
             levelLabel.text = "Level Two"
             num = num! - 10.0
             healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
         if (counter > 20) {
+            selectAndActivate2()
             print("level3")
             levelLabel.text = "Level Three"
             num = num! - 20.0

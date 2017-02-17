@@ -53,10 +53,9 @@ class GameOverTableViewController: UITableViewController {
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var sortedProfiles = FirebaseManager.profiles.sorted(by: {$0.score > $1.score})
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameOverTableViewCell
 
-        
+        var sortedProfiles = FirebaseManager.profiles.sorted(by: {$0.score > $1.score})
         let u = sortedProfiles[indexPath.row]
         
 
@@ -76,7 +75,7 @@ class GameOverTableViewController: UITableViewController {
         }
         counter = counter + 1
         let time: String = "\(counter) seconds have passed"
-        if (counter == 5) {
+        if (counter == 15) {
             self.performSegue(withIdentifier:"showEndScene", sender:self)
         
         }

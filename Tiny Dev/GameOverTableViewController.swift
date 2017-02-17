@@ -52,10 +52,12 @@ class GameOverTableViewController: UITableViewController {
 
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var sortedProfiles = FirebaseManager.profiles.sorted(by: {$0.score > $1.score})
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameOverTableViewCell
 
         
-        let u = FirebaseManager.profiles[indexPath.row]
+        let u = sortedProfiles[indexPath.row]
         
 
         cell.name.text = u.name

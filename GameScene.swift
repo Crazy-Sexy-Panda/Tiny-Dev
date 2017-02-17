@@ -55,9 +55,9 @@ class GameScene: SKScene {
     
     
      override func didMove(to view: SKView) {
-        initialPositionPing = CGPoint(x:frame.size.width/6,  y:570)
-        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:570)
-        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:570)
+        initialPositionPing = CGPoint(x:frame.size.width/6,  y:562)
+        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:562)
+        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:562)
 
         //setting background behind dev
         background.zPosition = 1
@@ -120,12 +120,12 @@ class GameScene: SKScene {
         
         //create Health Bar
         
-        healthClear.position = CGPoint(x:frame.size.width/1.58,  y: 635)
+        healthClear.position = CGPoint(x:frame.size.width/1.58,  y: 638)
         healthClear.zPosition = 7
         healthClear.size = CGSize(width:200, height: 20)
         addChild(healthClear)
         
-        healthFill.position = CGPoint(x:frame.size.width/1.58,  y: 635)
+        healthFill.position = CGPoint(x:frame.size.width/1.58,  y: 638)
         healthFill.zPosition = 7
         healthFill.size = CGSize(width:200, height: 20)
         addChild(healthFill)
@@ -135,7 +135,7 @@ class GameScene: SKScene {
         healthLabel = SKLabelNode(fontNamed: "Futura")
         healthLabel.text = "Dev Health"
         healthLabel.fontSize = 20
-        healthLabel.position = CGPoint(x:frame.size.width/5, y: 630)
+        healthLabel.position = CGPoint(x:frame.size.width/5, y: 633)
         healthLabel.color = UIColor.white
         healthLabel.zPosition = 6
         self.addChild(healthLabel)
@@ -143,8 +143,8 @@ class GameScene: SKScene {
         //create level label
         levelLabel = SKLabelNode(fontNamed: "Futura")
         levelLabel.text = "Level One"
-        levelLabel.fontSize = 20
-        levelLabel.position = CGPoint(x:frame.size.width/2, y: 660)
+        levelLabel.fontSize = 36
+        levelLabel.position = CGPoint(x:frame.size.width/2, y: 670)
         levelLabel.color = UIColor.white
         levelLabel.zPosition = 6
         self.addChild(levelLabel)
@@ -258,6 +258,7 @@ class GameScene: SKScene {
     func selectAndActivate() {
         let burstNode = NSKeyedUnarchiver.unarchiveObject(withFile: burstPath!)
             as! SKEmitterNode
+      
         if(counter%5==0) {
             
                 if (itemArray[0].active == false || itemArray[1].active == false || itemArray[2].active == false) {
@@ -275,8 +276,9 @@ class GameScene: SKScene {
                 }
 
             
-          
-        }
+            
+ 
+    }
     
     
     }
@@ -294,7 +296,7 @@ class GameScene: SKScene {
             levelLabel.text = "Level Three"
             num = num! - 20.0
             healthFill.run(SKAction.resize(toWidth: num!, duration: 0))
-        }
+    }
         
     }
     }
@@ -322,7 +324,7 @@ class GameScene: SKScene {
     func checkIfAlive() {
         print(num)
         print(healthFill.frame.size.width)
-        if(healthFill.frame.size.width <= 10) {
+        if(healthFill.frame.size.width <= 15) {
             print("dedd")
             let deadFrame: [SKTexture] = [d0,d1,d2,d3,d4]
             let deadAnimate = SKAction.animate(with: deadFrame, timePerFrame: 0.2)

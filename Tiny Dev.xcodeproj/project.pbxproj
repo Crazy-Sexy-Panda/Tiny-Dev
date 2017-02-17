@@ -31,6 +31,7 @@
 		04EDFBC01E4A4AFD00853720 /* PressStart2P-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */; };
 		08C768781E5253CA00A7D198 /* DragImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C768771E5253CA00A7D198 /* DragImage.swift */; };
 		6BD850D032C40F10384263A6 /* Pods_Tiny_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C32D7AF313666FF5854AF0 /* Pods_Tiny_Dev.framework */; };
+		C7AA5C7D1E56A2000037B7F0 /* GameEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AA5C7C1E56A2000037B7F0 /* GameEndViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		04EDFBBD1E4A43E700853720 /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		04EDFBBF1E4A487600853720 /* PressStart2P-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PressStart2P-Regular.ttf"; sourceTree = "<group>"; };
 		08C768771E5253CA00A7D198 /* DragImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImage.swift; sourceTree = "<group>"; };
+		C7AA5C7C1E56A2000037B7F0 /* GameEndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEndViewController.swift; sourceTree = "<group>"; };
 		ED7143CD9B92D7675735435B /* Pods-Tiny Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiny Dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tiny Dev/Pods-Tiny Dev.release.xcconfig"; sourceTree = "<group>"; };
 		F7C32D7AF313666FF5854AF0 /* Pods_Tiny_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tiny_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E71D5E90354B48E835BAA9 /* Pods-Tiny Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiny Dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tiny Dev/Pods-Tiny Dev.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				041469041E560B5700474C37 /* FirebaseManager.swift */,
 				04E1DD8B1E5521F9000ED038 /* pingSpark.sks */,
 				0414690A1E564CF300474C37 /* GameOverTableViewController.swift */,
+				C7AA5C7C1E56A2000037B7F0 /* GameEndViewController.swift */,
 			);
 			path = "Tiny Dev";
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				041469051E560B5700474C37 /* FirebaseManager.swift in Sources */,
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
 				0414690D1E564D7F00474C37 /* GameOverTableViewCell.swift in Sources */,
+				C7AA5C7D1E56A2000037B7F0 /* GameEndViewController.swift in Sources */,
 				04E1DD8A1E54FBF6000ED038 /* SignInViewController.swift in Sources */,
 				04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */,
 				0414690F1E56506A00474C37 /* Profile.swift in Sources */,

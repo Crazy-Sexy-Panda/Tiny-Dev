@@ -15,6 +15,7 @@ class GameOverTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         updateCounter()
         
         FirebaseManager.fillScores {

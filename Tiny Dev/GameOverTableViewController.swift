@@ -10,10 +10,12 @@ import UIKit
 
 class GameOverTableViewController: UITableViewController {
     var score:Int?
+    var customTimer: Timer?
+    var counter:Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateCounter()
         
         FirebaseManager.fillScores {
             () in
@@ -63,6 +65,18 @@ class GameOverTableViewController: UITableViewController {
         print(u.getProfileImage())
         return cell
         
+    }
+    
+    func updateCounter() {
+        if (customTimer == nil) {
+            customTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        }
+        counter = counter + 1
+        let time: String = "\(counter) seconds have passed"
+        if (counter == 5) {
+            self.performSegue(withIdentifier:"showEndScene", sender:self)
+        
+        }
     }
 
     /*

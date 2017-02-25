@@ -13,6 +13,8 @@ class LandingViewController: UIViewController {
     
     @IBOutlet var FunText: UILabel!
     
+    @IBOutlet weak var letsplay: UIImageView!
+    
     // Creating Audio Player
     var audioPlayer : AVAudioPlayer? {
         get {
@@ -92,7 +94,7 @@ class LandingViewController: UIViewController {
         
        // applying animation to sprite picture
         
-        theButton.layer.add(pulseAnimation, forKey: nil)
+        letsplay.layer.add(pulseAnimation, forKey: nil)
         
         
         //play music

@@ -144,7 +144,7 @@ class GameScene: SKScene {
         levelLabel = SKLabelNode(fontNamed: "Futura")
         levelLabel.text = "Level One"
         levelLabel.fontSize = 36
-        levelLabel.position = CGPoint(x:frame.size.width/2, y: 670)
+        levelLabel.position = CGPoint(x:frame.size.width/2, y: 665)
         levelLabel.color = UIColor.white
         levelLabel.zPosition = 6
         self.addChild(levelLabel)

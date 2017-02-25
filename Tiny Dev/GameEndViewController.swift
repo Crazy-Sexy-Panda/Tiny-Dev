@@ -9,6 +9,8 @@
 import UIKit
 
 class GameEndViewController: UIViewController {
+    
+    var score:Int?
 
     @IBAction func restartGame(_ sender: Any) {
          self.performSegue(withIdentifier: "showGame", sender: self)
@@ -16,6 +18,7 @@ class GameEndViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(score!)
 
         // Do any additional setup after loading the view.
     }

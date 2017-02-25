@@ -12,19 +12,13 @@ class GameOverTableViewController: UITableViewController {
     var score:Int?
     var customTimer: Timer?
     var counter:Int = 0
+    var profiles:Array<Any?> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateCounter()
         
-        FirebaseManager.fillScores {
-            () in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        
-    }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -57,14 +51,9 @@ class GameOverTableViewController: UITableViewController {
 
         var sortedProfiles = FirebaseManager.profiles.sorted(by: {$0.score > $1.score})
         let u = sortedProfiles[indexPath.row]
-        
-
         cell.name.text = u.name
         cell.DevTitle.text = u.DevTitle
         cell.score.text = "\(u.score)"
-        var finalImage = u.getProfileImage()
-        cell.cellImage.image = UIImage(named:"icon")
-        print(u.getProfileImage())
         return cell
         
     }

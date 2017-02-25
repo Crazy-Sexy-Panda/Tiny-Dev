@@ -15,6 +15,7 @@
 		045604991E4A6DF40098A771 /* TitleMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 045604981E4A6DF40098A771 /* TitleMusic.mp3 */; };
 		0456049B1E4A736F0098A771 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0456049A1E4A736F0098A771 /* gameMusic.mp3 */; };
 		045604A21E4A77230098A771 /* Beep19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 045604A11E4A77230098A771 /* Beep19.wav */; };
+		04ACA6951E621A7700752E26 /* GameOverTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ACA6941E621A7700752E26 /* GameOverTableView.swift */; };
 		04BF7EAE1E521D8800147677 /* DevImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF7EAD1E521D8800147677 /* DevImage.swift */; };
 		04BF7EB01E522EDF00147677 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF7EAF1E522EDF00147677 /* GameScene.swift */; };
 		04E1DD801E54D272000ED038 /* PingSound.caf in Resources */ = {isa = PBXBuildFile; fileRef = 04E1DD7F1E54D272000ED038 /* PingSound.caf */; };
@@ -43,6 +44,7 @@
 		045604981E4A6DF40098A771 /* TitleMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TitleMusic.mp3; sourceTree = "<group>"; };
 		0456049A1E4A736F0098A771 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
 		045604A11E4A77230098A771 /* Beep19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Beep19.wav; sourceTree = "<group>"; };
+		04ACA6941E621A7700752E26 /* GameOverTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverTableView.swift; path = ../GameOverTableView.swift; sourceTree = "<group>"; };
 		04BF7EAD1E521D8800147677 /* DevImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevImage.swift; sourceTree = "<group>"; };
 		04BF7EAF1E522EDF00147677 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
 		04E1DD7F1E54D272000ED038 /* PingSound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PingSound.caf; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				04EDFBB41E4A413800853720 /* LaunchScreen.storyboard */,
 				04EDFBB71E4A413800853720 /* Info.plist */,
 				041469061E560BE200474C37 /* GoogleService-Info.plist */,
+				04ACA6941E621A7700752E26 /* GameOverTableView.swift */,
 				08C768771E5253CA00A7D198 /* DragImage.swift */,
 				04E1DD891E54FBF6000ED038 /* SignInViewController.swift */,
 				041469041E560B5700474C37 /* FirebaseManager.swift */,
@@ -317,6 +320,7 @@
 				04EDFBA61E4A413800853720 /* AppDelegate.swift in Sources */,
 				0414690D1E564D7F00474C37 /* GameOverTableViewCell.swift in Sources */,
 				C7AA5C7D1E56A2000037B7F0 /* GameEndViewController.swift in Sources */,
+				04ACA6951E621A7700752E26 /* GameOverTableView.swift in Sources */,
 				04E1DD8A1E54FBF6000ED038 /* SignInViewController.swift in Sources */,
 				04EDFBBE1E4A43E700853720 /* LandingViewController.swift in Sources */,
 				0414690F1E56506A00474C37 /* Profile.swift in Sources */,

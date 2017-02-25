@@ -8,17 +8,27 @@
 
 import UIKit
 
-class GameEndViewController: UIViewController {
+class GameEndViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     var score:Int?
 
+    @IBOutlet var highScoreTable: GameOverTableView!
+   
     @IBAction func restartGame(_ sender: Any) {
          self.performSegue(withIdentifier: "showGame", sender: self)
     
     }
     override func viewDidLoad() {
+        highScoreTable.delegate = self
+        highScoreTable.dataSource = self
         super.viewDidLoad()
         print(score!)
+        FirebaseManager.fillScores {
+            () in
+            DispatchQueue.main.async {
+                self.highScoreTable.reloadData()
+                print(FirebaseManager.profiles)
+            }}
 
         // Do any additional setup after loading the view.
     }
@@ -28,7 +38,28 @@ class GameEndViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return FirebaseManager.profiles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("RUNNING RUNNING RUNNING")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameOverTableViewCell
+        var sortedProfiles = FirebaseManager.profiles.sorted(by: {$0.score > $1.score})
+        let u = sortedProfiles[indexPath.row]
+        cell.name.text = u.name
+        cell.DevTitle.text = u.DevTitle
+        cell.score.text = "\(u.score)"
+        return cell
+        
+    }
 
+  
+    
     /*
     // MARK: - Navigation
 

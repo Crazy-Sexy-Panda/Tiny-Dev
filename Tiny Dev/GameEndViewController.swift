@@ -47,10 +47,16 @@ class GameEndViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("RUNNING RUNNING RUNNING")
+        var finalImage:UIImage?
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameOverTableViewCell
         var sortedProfiles = FirebaseManager.profiles.sorted(by: {$0.score > $1.score})
         let u = sortedProfiles[indexPath.row]
+
+        if let url = NSURL(string: u.profImageUrl) {
+            if let data = NSData(contentsOf: url as URL) {
+                cell.profImage.image = UIImage(data: data as Data)!
+            }
+        }
         cell.name.text = u.name
         cell.DevTitle.text = u.DevTitle
         cell.score.text = "\(u.score)"
@@ -69,5 +75,6 @@ class GameEndViewController: UIViewController, UITableViewDataSource, UITableVie
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

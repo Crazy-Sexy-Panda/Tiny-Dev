@@ -12,6 +12,7 @@ class GameOverTableViewCell: UITableViewCell {
     @IBOutlet var name: UILabel!
     @IBOutlet var DevTitle: UILabel!
     @IBOutlet var score: UILabel!
+    @IBOutlet var profImage: UIImageView!
 
 
   

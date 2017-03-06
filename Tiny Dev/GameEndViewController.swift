@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
-import FirebaseStorageUI
 import FirebaseStorage
 
 class GameEndViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {

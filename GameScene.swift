@@ -55,9 +55,9 @@ class GameScene: SKScene {
     
     
      override func didMove(to view: SKView) {
-        initialPositionPing = CGPoint(x:frame.size.width/6,  y:532)
-        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:532)
-        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:532)
+        initialPositionPing = CGPoint(x:frame.size.width/6,  y:frame.size.height/1.3)
+        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:frame.size.height/1.3)
+        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:frame.size.height/1.3)
 
         //setting background behind dev
         background.zPosition = 1
@@ -120,12 +120,12 @@ class GameScene: SKScene {
         
         //create Health Bar
         
-        healthClear.position = CGPoint(x:frame.size.width/1.58,  y: 608)
+        healthClear.position = CGPoint(x:frame.size.width/1.53,  y: frame.size.height/1.14)
         healthClear.zPosition = 7
         healthClear.size = CGSize(width:200, height: 20)
         addChild(healthClear)
         
-        healthFill.position = CGPoint(x:frame.size.width/1.58,  y: 608)
+        healthFill.position = CGPoint(x:frame.size.width/1.53,  y: frame.size.height/1.14)
         healthFill.zPosition = 7
         healthFill.size = CGSize(width:200, height: 20)
         addChild(healthFill)
@@ -135,7 +135,7 @@ class GameScene: SKScene {
         healthLabel = SKLabelNode(fontNamed: "Futura")
         healthLabel.text = "Dev Health"
         healthLabel.fontSize = 20
-        healthLabel.position = CGPoint(x:frame.size.width/5, y: 603)
+        healthLabel.position = CGPoint(x:frame.size.width/5.8, y: frame.size.height/1.16)
         healthLabel.color = UIColor.white
         healthLabel.zPosition = 6
         self.addChild(healthLabel)
@@ -144,7 +144,7 @@ class GameScene: SKScene {
         levelLabel = SKLabelNode(fontNamed: "Futura")
         levelLabel.text = "Level One"
         levelLabel.fontSize = 36
-        levelLabel.position = CGPoint(x:frame.size.width/2, y: 640)
+        levelLabel.position = CGPoint(x:frame.size.width/2, y: frame.size.height/1.1)
         levelLabel.color = UIColor.white
         levelLabel.zPosition = 6
         self.addChild(levelLabel)

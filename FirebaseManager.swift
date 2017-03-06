@@ -17,7 +17,6 @@ class FirebaseManager: NSObject {
     static let databaseRef = FIRDatabase.database().reference()
     static var currentUserId:String = ""
     static var currentUser:FIRUser? = nil
-    static var profileImageUrl:String = ""
     static var uid:String = ""
     static var oldScore:Int?
     static var profiles = [Profile]()
@@ -36,25 +35,15 @@ class FirebaseManager: NSObject {
     }
 
 
-    static func CreateAccount(email:String, password:String, name:String, DevTitle:String, profileImage: UIImage, completion: @escaping (_ result:String) -> Void) {
+    static func CreateAccount(email:String, password:String, name:String, DevTitle:String, completion: @escaping (_ result:String) -> Void) {
         FIRAuth.auth()?.createUser(withEmail:email, password:password, completion: {(user,error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
             }
-            let profileImageRef = FIRStorage.storage().reference().child("profileImages").child("\(NSUUID().uuidString).jpg")
-            if let imageData = UIImageJPEGRepresentation(profileImage, 0.25) {
-                profileImageRef.put(imageData, metadata:nil) {
-                    metadata, error in
-                    if (error != nil) {
-                        print(error)
-                        return
-                    } else {
-                        print(metadata)
-                        if let downloadUrl = metadata?.downloadURL()?.absoluteString{
-                                self.profileImageUrl = downloadUrl
+    
                             
-                            AddUser(email:email, name:name, DevTitle:DevTitle, profImageUrl: profileImageUrl)
+                            AddUser(email:email, name:name, DevTitle:DevTitle)
                             Login(email:email, password:password) {
                                 (success:Bool) in
                                 if(success) {
@@ -63,23 +52,17 @@ class FirebaseManager: NSObject {
                                     print("Login unsuccessful after account creation")
                                 }
                             }
-                            completion("") 
-                                
-    
-                            
-                        }
-                    }
-                }
-            }
-        
+                            completion("")
+
+
           
         })
     }
     
-    static func AddUser(email:String, name:String, DevTitle:String, profImageUrl:String) {
+    static func AddUser(email:String, name:String, DevTitle:String) {
         
         let uid = FIRAuth.auth()?.currentUser?.uid
-        let post = ["uid": uid!, "email": email, "name": name, "DevTitle":DevTitle, "profImageUrl": profImageUrl ]
+        let post = ["uid": uid!, "email": email, "name": name, "DevTitle":DevTitle]
         databaseRef.child("users").child(uid!).setValue(post)
     }
     
@@ -99,9 +82,8 @@ class FirebaseManager: NSObject {
                 let name = result["name"]! as! String
                 let DevTitle = result["DevTitle"]! as! String
                 let score = result["score"]! as! Int
-                let profImageUrl = result["profImageUrl"]! as! String
                 
-                let u = Profile(name:name, DevTitle:DevTitle, score:score, profImageUrl: profileImageUrl)
+                let u = Profile(name:name, DevTitle:DevTitle, score:score)
                 
                 FirebaseManager.profiles.append(u)
             }

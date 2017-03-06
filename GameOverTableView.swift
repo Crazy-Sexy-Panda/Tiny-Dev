@@ -40,8 +40,7 @@ class GameOverTableView: UITableView {
         cell.name.text = u.name
         cell.DevTitle.text = u.DevTitle
         cell.score.text = "\(u.score)"
-        var finalImage = u.getProfileImage()
-        print(u.getProfileImage())
+        cell.profImage.image = UIImage(named: "dev1.png")
         return cell
         
     }

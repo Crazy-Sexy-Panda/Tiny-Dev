@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
+import FirebaseStorageUI
+import FirebaseStorage
 
 class GameEndViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
-    
+    let storage = FIRStorage.storage()
     var score:Int?
 
     @IBOutlet var highScoreTable: GameOverTableView!
@@ -47,23 +50,24 @@ class GameEndViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var finalImage:UIImage?
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameOverTableViewCell
         var sortedProfiles = FirebaseManager.profiles.sorted(by: {$0.score > $1.score})
         let u = sortedProfiles[indexPath.row]
 
-        if let url = NSURL(string: u.profImageUrl) {
-            if let data = NSData(contentsOf: url as URL) {
-                cell.profImage.image = UIImage(data: data as Data)!
-            }
-        }
+        
+     
+        
+        
+        
+        cell.profImage.image = UIImage(named: "dev1.png")
         cell.name.text = u.name
         cell.DevTitle.text = u.DevTitle
         cell.score.text = "\(u.score)"
         return cell
         
     }
-
+   
+    
   
     
     /*

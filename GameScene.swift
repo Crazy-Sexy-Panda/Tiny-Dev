@@ -55,9 +55,9 @@ class GameScene: SKScene {
     
     
      override func didMove(to view: SKView) {
-        initialPositionPing = CGPoint(x:frame.size.width/6,  y:562)
-        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:562)
-        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:562)
+        initialPositionPing = CGPoint(x:frame.size.width/6,  y:552)
+        initialPositionBeer = CGPoint(x:frame.size.width/2,  y:552)
+        initialPositionCode = CGPoint(x:frame.size.width / 1.25,  y:552)
 
         //setting background behind dev
         background.zPosition = 1
@@ -120,12 +120,12 @@ class GameScene: SKScene {
         
         //create Health Bar
         
-        healthClear.position = CGPoint(x:frame.size.width/1.58,  y: 638)
+        healthClear.position = CGPoint(x:frame.size.width/1.58,  y: 628)
         healthClear.zPosition = 7
         healthClear.size = CGSize(width:200, height: 20)
         addChild(healthClear)
         
-        healthFill.position = CGPoint(x:frame.size.width/1.58,  y: 638)
+        healthFill.position = CGPoint(x:frame.size.width/1.58,  y: 628)
         healthFill.zPosition = 7
         healthFill.size = CGSize(width:200, height: 20)
         addChild(healthFill)
@@ -135,7 +135,7 @@ class GameScene: SKScene {
         healthLabel = SKLabelNode(fontNamed: "Futura")
         healthLabel.text = "Dev Health"
         healthLabel.fontSize = 20
-        healthLabel.position = CGPoint(x:frame.size.width/5, y: 633)
+        healthLabel.position = CGPoint(x:frame.size.width/5, y: 623)
         healthLabel.color = UIColor.white
         healthLabel.zPosition = 6
         self.addChild(healthLabel)
@@ -144,7 +144,7 @@ class GameScene: SKScene {
         levelLabel = SKLabelNode(fontNamed: "Futura")
         levelLabel.text = "Level One"
         levelLabel.fontSize = 36
-        levelLabel.position = CGPoint(x:frame.size.width/2, y: 670)
+        levelLabel.position = CGPoint(x:frame.size.width/2, y: 660)
         levelLabel.color = UIColor.white
         levelLabel.zPosition = 6
         self.addChild(levelLabel)

@@ -135,7 +135,7 @@ class GameScene: SKScene {
         healthLabel = SKLabelNode(fontNamed: "Futura")
         healthLabel.text = "Dev Health"
         healthLabel.fontSize = 20
-        healthLabel.position = CGPoint(x:frame.size.width/5.8, y: frame.size.height/1.16)
+        healthLabel.position = CGPoint(x:frame.size.width/5.8, y: frame.size.height/1.155)
         healthLabel.color = UIColor.white
         healthLabel.zPosition = 6
         self.addChild(healthLabel)

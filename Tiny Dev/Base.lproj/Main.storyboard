@@ -74,9 +74,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ju2-SO-iT0">
-                                <rect key="frame" x="61" y="234" width="250" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ju2-SO-iT0">
+                                <rect key="frame" x="62.5" y="234" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.97953722939999999" blue="0.97611776250000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ju2-SO-iT0" secondAttribute="height" multiplier="25:3" id="7vv-E4-S3K"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="HUR-6s-PwX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="I6A-nl-zxt"/>
+                                    <constraint firstAttribute="width" constant="250" id="gh3-GB-8dp"/>
+                                    <constraint firstAttribute="height" constant="30" id="nCC-Fw-rNi"/>
+                                </constraints>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -84,6 +91,11 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dev Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="whQ-uY-GAr">
                                 <rect key="frame" x="61" y="272" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.97953722939999999" blue="0.97611776250000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="CRy-ua-AZP"/>
+                                    <constraint firstAttribute="height" constant="30" id="egY-Q9-Jhq"/>
+                                    <constraint firstAttribute="width" secondItem="whQ-uY-GAr" secondAttribute="height" multiplier="25:3" id="zds-96-Bpn"/>
+                                </constraints>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -144,26 +156,23 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ju2-SO-iT0" firstAttribute="centerY" secondItem="uON-Ty-bCZ" secondAttribute="centerY" constant="-84.5" id="1gb-8t-k7A"/>
                             <constraint firstItem="6Wc-hz-UTK" firstAttribute="centerY" secondItem="uON-Ty-bCZ" secondAttribute="centerY" constant="-244" id="409-fh-FDC"/>
-                            <constraint firstItem="whQ-uY-GAr" firstAttribute="leading" secondItem="uON-Ty-bCZ" secondAttribute="leadingMargin" constant="45" id="4MP-uW-8u5"/>
                             <constraint firstItem="6Wc-hz-UTK" firstAttribute="centerX" secondItem="uON-Ty-bCZ" secondAttribute="centerX" id="4kL-CZ-wp6"/>
                             <constraint firstItem="qw4-dD-jy4" firstAttribute="centerY" secondItem="uON-Ty-bCZ" secondAttribute="centerY" constant="-122.5" id="Ata-aV-w6A"/>
                             <constraint firstItem="qdu-Qw-1Na" firstAttribute="top" secondItem="2Sm-UQ-We2" secondAttribute="bottom" constant="260" id="Dic-Ep-FKP"/>
+                            <constraint firstItem="Ju2-SO-iT0" firstAttribute="centerY" secondItem="uON-Ty-bCZ" secondAttribute="centerY" constant="-84.5" id="EJy-hp-3tz"/>
+                            <constraint firstItem="whQ-uY-GAr" firstAttribute="centerX" secondItem="uON-Ty-bCZ" secondAttribute="centerX" id="EM9-Ul-Elf"/>
                             <constraint firstItem="Yw0-0g-bCn" firstAttribute="centerY" secondItem="uON-Ty-bCZ" secondAttribute="centerY" constant="-160.5" id="N0P-f0-Hzf"/>
                             <constraint firstItem="2Sm-UQ-We2" firstAttribute="leading" secondItem="uON-Ty-bCZ" secondAttribute="leadingMargin" constant="58" id="Sks-H4-HAz"/>
-                            <constraint firstItem="whQ-uY-GAr" firstAttribute="top" secondItem="Ju2-SO-iT0" secondAttribute="bottom" constant="8" id="V4f-uL-d8M"/>
                             <constraint firstItem="qw4-dD-jy4" firstAttribute="centerX" secondItem="uON-Ty-bCZ" secondAttribute="centerX" id="XIh-aB-60S"/>
                             <constraint firstItem="2Sm-UQ-We2" firstAttribute="top" secondItem="whQ-uY-GAr" secondAttribute="bottom" constant="73" id="Ym7-St-vyY"/>
                             <constraint firstItem="aCq-jT-GWv" firstAttribute="centerY" secondItem="uON-Ty-bCZ" secondAttribute="centerY" constant="-160.5" id="cKB-6x-2zG"/>
-                            <constraint firstItem="whQ-uY-GAr" firstAttribute="centerY" secondItem="uON-Ty-bCZ" secondAttribute="centerY" constant="-46.5" id="duM-yW-Pdj"/>
-                            <constraint firstItem="Ju2-SO-iT0" firstAttribute="centerX" secondItem="uON-Ty-bCZ" secondAttribute="centerX" id="eaw-1J-Tc7"/>
-                            <constraint firstItem="whQ-uY-GAr" firstAttribute="centerX" secondItem="uON-Ty-bCZ" secondAttribute="centerX" id="i4U-FM-wyg"/>
+                            <constraint firstItem="whQ-uY-GAr" firstAttribute="centerY" secondItem="uON-Ty-bCZ" secondAttribute="centerY" constant="-46.5" id="f9t-3b-o7C"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Sm-UQ-We2" secondAttribute="trailing" constant="58" id="q78-Is-rGr"/>
                             <constraint firstItem="qw4-dD-jy4" firstAttribute="leading" secondItem="Ju2-SO-iT0" secondAttribute="trailing" constant="-186" id="qqq-aC-TFK"/>
                             <constraint firstItem="aCq-jT-GWv" firstAttribute="centerX" secondItem="uON-Ty-bCZ" secondAttribute="centerX" constant="65.5" id="rhg-3u-B8P"/>
+                            <constraint firstItem="Ju2-SO-iT0" firstAttribute="centerX" secondItem="uON-Ty-bCZ" secondAttribute="centerX" id="v8Z-Mf-dip"/>
                             <constraint firstItem="Yw0-0g-bCn" firstAttribute="centerX" secondItem="uON-Ty-bCZ" secondAttribute="centerX" constant="-66.5" id="w4I-7K-NJL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ju2-SO-iT0" secondAttribute="trailing" constant="48" id="zBl-GN-7eZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -233,7 +242,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UPD-3W-vfC" id="Ooz-QU-YLb">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djr-fF-fjg">

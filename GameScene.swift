@@ -35,9 +35,9 @@ class GameScene: SKScene {
     
     let level2 = SKSpriteNode(imageNamed: "level2.png")
     
-    let ping = Item(imageNamed: "pinkpong.png")
-    let beer = Item(imageNamed: "yellowpint.png")
-    let code = Item(imageNamed: "greencom.png")
+    let ping = Item(imageNamed: "realpong.png")
+    let beer = Item(imageNamed: "realbeer.png")
+    let code = Item(imageNamed: "reallaptop.png")
     let healthClear = SKSpriteNode(imageNamed: "bar.jpg")
     let healthFill = SKSpriteNode(imageNamed: "barFill.png")
     var healthLabel = SKLabelNode()
